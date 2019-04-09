@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Медиа Портрет</title>
+  <meta name="description" content="Проект студентов курса «Фотография в медиа»" />
+  <meta name="keywords" content="rodchenko art school, photo in media, photo, interview, webgl, cables.gl" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="preload" href="/fonts/SangBleuEmpire-Medium-WebXL.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/SangBleuEmpire-RegularItalic-WebXL.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+
+  <div class="page__loader-wrap">
+    <div class="page__loader"></div>
+  </div>
+
+  <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
+
+  <script type="text/javascript" src="js/libs.core.min.js"></script>
+  <script type="text/javascript" src="js/cables.min.js"></script>
+
+  <script type="text/javascript" src="js/ops.js"></script>
+
+  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery ||
+      document.write(
+        '<script src="js/vendor/jquery-3.3.1.min.js"><\/script>'
+      );
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+    function showError(errId, errMsg) {
+      alert("An error occured: " + errId + ", " + errMsg);
+    }
+
+    function patchInitialized() {
+      // You can now access the patch object (CABLES.patch), register variable watchers and so on
+    }
+
+    function patchFinishedLoading() {
+      // The patch is ready now, all assets have been loaded
+    }
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+      CABLES.patch = new CABLES.Patch({
+        patchFile: "js/media-portrait.json",
+        prefixAssetPath: "",
+        glCanvasId: "glcanvas",
+        glCanvasResizeToWindow: true,
+        onError: showError,
+        onPatchLoaded: patchInitialized,
+        onFinishedLoading: patchFinishedLoading
+      });
+    });
+
+    function preventBehavior(e) {
+      e.preventDefault();
+    };
+
+    var canvas = document.getElementById('glcanvas');
+    canvas.addEventListener('touchmove', preventBehavior, false);
+  </script>
+</body>
+
+</html>

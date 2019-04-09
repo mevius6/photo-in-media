@@ -1,0 +1,10 @@
+patch variables:
+
+ - Max - default Value:146
+ - Min - default Value:0
+ - posX - default Value:0
+ - ApproachInterpolationResult - default Value:undefined
+ - img-w - default Value:4
+ - img-h - default Value:6
+ - canvas-h - default Value:undefined
+ - canvas-w - default Value:undefined
