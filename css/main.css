@@ -24,7 +24,11 @@ canvas {
 body {
     margin: 0;
 }
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-weight: 400;
     font-style: normal;
 }
@@ -441,16 +445,21 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     right: 0;
     width: 3rem; /* ~48px */
     height: 3rem;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    background: transparent no-repeat center center;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    border-color: var(--color-bd);
+    border-style: solid;
+    cursor: pointer;
 }
 .page__nav > div:nth-child(1) {
     top: 0;
     /*background: var(--svg-icon-up) center / 48px 48px no-repeat;*/
-    background: black no-repeat center center;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    border-width: 2px 0 0 2px;
 }
 .page__nav > div:nth-child(2) {
     bottom: 0;
     /*background: var(--svg-icon-down) center / 48px 48px no-repeat;*/
-    background: black no-repeat center center;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    border-width: 0 2px 2px 0;
 }
