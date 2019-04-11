@@ -7358,3 +7358,45 @@ Ops.Value.ValueSwitcherNew.prototype = new CABLES.Op();
 CABLES.OPS["fbb89f72-f2e3-4d34-ad01-7d884a1bcdc0"]={f:Ops.Value.ValueSwitcherNew,objName:"Ops.Value.ValueSwitcherNew"};
 
 
+
+
+// **************************************************************
+// 
+// Ops.Trigger.TriggerCounter
+// 
+// **************************************************************
+
+Ops.Trigger.TriggerCounter = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+const
+    exe=op.inTriggerButton("exe"),
+    reset=op.inTriggerButton("reset"),
+    trigger=op.outTrigger("trigger"),
+    num=op.outValue("timesTriggered");
+
+op.toWorkPortsNeedToBeLinked(exe);
+
+var n=0;
+
+exe.onTriggered= function()
+{
+    n++;
+    num.set(n);
+    trigger.trigger();
+};
+
+reset.onTriggered= function()
+{
+    n=0;
+    num.set(n);
+};
+
+};
+
+Ops.Trigger.TriggerCounter.prototype = new CABLES.Op();
+CABLES.OPS["e640619f-235c-4543-bbf8-b358e0283180"]={f:Ops.Trigger.TriggerCounter,objName:"Ops.Trigger.TriggerCounter"};
+
+
