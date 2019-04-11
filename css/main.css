@@ -457,7 +457,8 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     -webkit-transform: rotateZ(45deg);
     transform: rotateZ(45deg);
     border-color: var(--color-bd);
-    border-style: solid;
+    border-style: dashed;
+    border-radius: 50%;
     filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     cursor: pointer;
     -webkit-transition: 0.4s;
@@ -467,19 +468,18 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     /*
     background: var(--svg-icon-up) center / 48px 48px no-repeat;*/
     align-self: start;
-    border-width: 2px 0 0 2px;
+    border-width: 0.3rem 0 0 0.3rem;
 }
 .page__nav > div:nth-child(2) {
     /*
     background: var(--svg-icon-down) center / 48px 48px no-repeat;*/
     align-self: end;
     border-width: 0 0.3rem 0.3rem 0;
-    border-style: dashed;
-    border-radius: 50%;
 }
+.page__nav > div:nth-child(1):hover,
 .page__nav > div:nth-child(2):hover {
+    border-color: var(--color-hl);
     border-style: solid;
     border-radius: 0;
-    border-color: var(--color-hl);
     filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 }
