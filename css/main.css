@@ -391,7 +391,6 @@ body {
 }
 .grid__item-txt h5 {
     font-size: var(--fs-hd-3);
-    font-weight: 400;
     padding: var(--spacing) 0 5px;
 }
 .grid__item-txt p {
