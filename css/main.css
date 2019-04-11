@@ -428,6 +428,7 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     width: 1rem;
     height: 1rem;
 }
+
 .page__nav {
     display: flex !important;
     flex-flow: column;
@@ -445,9 +446,11 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     top: 0;
     /*background: var(--svg-icon-up) center / 48px 48px no-repeat;*/
     background: black no-repeat center center;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 }
 .page__nav > div:nth-child(2) {
     bottom: 0;
     /*background: var(--svg-icon-down) center / 48px 48px no-repeat;*/
     background: black no-repeat center center;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 }
