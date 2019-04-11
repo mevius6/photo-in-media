@@ -7234,3 +7234,127 @@ Ops.Gl.TextureEffects.BarrelDistortion.prototype = new CABLES.Op();
 CABLES.OPS["57eda803-bda4-4b22-b578-608cabb9859e"]={f:Ops.Gl.TextureEffects.BarrelDistortion,objName:"Ops.Gl.TextureEffects.BarrelDistortion"};
 
 
+
+
+// **************************************************************
+// 
+// Ops.Anim.BoolAnim
+// 
+// **************************************************************
+
+Ops.Anim.BoolAnim = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+var anim=new CABLES.Anim();
+
+const
+    exe=op.inTrigger("exe"),
+    bool=op.inValueBool("bool"),
+    pease=anim.createPort(op,"easing"),
+    duration=op.inValue("duration",0.5),
+    dir=op.inValueSelect("Direction",["Animate Both","Only True","Only False"],"Both"),
+    valueFalse=op.inValue("value false",0),
+    valueTrue=op.inValue("value true",1),
+    next=op.outTrigger("trigger"),
+    value=op.outValue("value"),
+    finished=op.outValueBool("finished"),
+    finishedTrigger=op.outTrigger("Finished Trigger");
+
+
+var startTime=CABLES.now();
+op.toWorkPortsNeedToBeLinked(exe);
+op.setPortGroup("Animation",[duration,pease]);
+op.setPortGroup("Values",[valueFalse,valueTrue]);
+
+dir.onChange=bool.onChange=valueFalse.onChange=valueTrue.onChange=duration.onChange=setAnim;
+setAnim();
+
+
+function setAnim()
+{
+    finished.set(false);
+    var now=(CABLES.now()-startTime)/1000;
+    var oldValue=anim.getValue(now);
+    anim.clear();
+
+    anim.setValue(now,oldValue);
+
+
+    if(!bool.get())
+    {
+        if(dir.get()!='Only True' ) anim.setValue(now+duration.get(),valueFalse.get());
+            else anim.setValue(now,valueFalse.get());
+    }
+    else
+    {
+        if(dir.get()!='Only False' ) anim.setValue(now+duration.get(),valueTrue.get());
+            else anim.setValue(now,valueTrue.get());
+
+    }
+}
+
+
+exe.onTriggered=function()
+{
+    var t=(CABLES.now()-startTime)/1000;
+    value.set(anim.getValue(t));
+
+    if(anim.hasEnded(t))
+    {
+        if(!finished.get()) finishedTrigger.trigger();
+        finished.set(true);
+    }
+
+    next.trigger();
+};
+
+
+
+};
+
+Ops.Anim.BoolAnim.prototype = new CABLES.Op();
+CABLES.OPS["06ad9d35-ccf5-4d31-889c-e23fa062588a"]={f:Ops.Anim.BoolAnim,objName:"Ops.Anim.BoolAnim"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Value.ValueSwitcherNew
+// 
+// **************************************************************
+
+Ops.Value.ValueSwitcherNew = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+var idx=op.inValueInt("Index");
+var valuePorts=[];
+var result=op.outValue("Result");
+
+idx.onChange=update;
+
+for(var i=0;i<10;i++)
+{
+    var p=op.inValue("Value "+i);
+    valuePorts.push( p );
+    p.onChange=update;
+}
+
+function update()
+{
+    if(idx.get()>=0 && valuePorts[idx.get()])
+    {
+        result.set( valuePorts[idx.get()].get() );
+    }
+}
+
+};
+
+Ops.Value.ValueSwitcherNew.prototype = new CABLES.Op();
+CABLES.OPS["fbb89f72-f2e3-4d34-ad01-7d884a1bcdc0"]={f:Ops.Value.ValueSwitcherNew,objName:"Ops.Value.ValueSwitcherNew"};
+
+
