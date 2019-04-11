@@ -7182,3 +7182,55 @@ Ops.Gl.TextureEffects.DepthTextureFocus.prototype = new CABLES.Op();
 CABLES.OPS["d11b89b2-c2e3-4fcb-b4da-632d23b69075"]={f:Ops.Gl.TextureEffects.DepthTextureFocus,objName:"Ops.Gl.TextureEffects.DepthTextureFocus"};
 
 
+
+
+// **************************************************************
+// 
+// Ops.Gl.TextureEffects.BarrelDistortion
+// 
+// **************************************************************
+
+Ops.Gl.TextureEffects.BarrelDistortion = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={barreldistort_frag:"IN vec2 texCoord;\nUNI sampler2D tex;\nUNI float amount;\n\n// adapted from https://www.shadertoy.com/view/MlSXR3\n\n\nvec2 brownConradyDistortion(vec2 uv)\n{\n// positive values of K1 give barrel distortion, negative give pincushion\n    float barrelDistortion1 = 0.15-amount; // K1 in text books\n    float barrelDistortion2 = 0.0-amount; // K2 in text books\n    float r2 = uv.x*uv.x + uv.y*uv.y;\n    uv *= 1.0 + barrelDistortion1 * r2 + barrelDistortion2 * r2 * r2;\n\n    // tangential distortion (due to off center lens elements)\n    // is not modeled in this function, but if it was, the terms would go here\n    return uv;\n}\n\nvoid main()\n{\n   vec2 tc=brownConradyDistortion(texCoord-0.5)+0.5;\n   vec4 col=texture(tex,tc);\n   outColor= col;\n}",};
+var render=op.inTrigger('render');
+var amount=op.inValue("amount");
+
+var trigger=op.outTrigger('trigger');
+
+var cgl=op.patch.cgl;
+var shader=new CGL.Shader(cgl);
+
+shader.setSource(shader.getDefaultVertexShader(),attachments.barreldistort_frag);
+var textureUniform=new CGL.Uniform(shader,'t','tex',0);
+var uniamount=new CGL.Uniform(shader,'f','amount',0);
+
+
+render.onTriggered=function()
+{
+
+    var texture=cgl.currentTextureEffect.getCurrentSourceTexture();
+
+    uniamount.setValue(amount.get()*(1/texture.width));
+
+    cgl.setShader(shader);
+    cgl.currentTextureEffect.bind();
+
+    cgl.setTexture(0, texture.tex );
+    // cgl.gl.bindTexture(cgl.gl.TEXTURE_2D, texture.tex );
+
+    cgl.currentTextureEffect.finish();
+    cgl.setPreviousShader();
+
+    trigger.trigger();
+};
+
+
+};
+
+Ops.Gl.TextureEffects.BarrelDistortion.prototype = new CABLES.Op();
+CABLES.OPS["57eda803-bda4-4b22-b578-608cabb9859e"]={f:Ops.Gl.TextureEffects.BarrelDistortion,objName:"Ops.Gl.TextureEffects.BarrelDistortion"};
+
+
