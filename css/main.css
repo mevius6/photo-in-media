@@ -445,12 +445,12 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     right: 0;
     width: 3rem; /* ~48px */
     height: 3rem;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     background: transparent no-repeat center center;
     -webkit-transform: rotateZ(45deg);
     transform: rotateZ(45deg);
     border-color: var(--color-bd);
     border-style: solid;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     cursor: pointer;
 }
 .page__nav > div:nth-child(1) {
