@@ -53,8 +53,6 @@ a {
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
     --svg-icon-fb: url(/img/fb.svg);
     --svg-icon-ig: url(/img/ig.svg);
-    --svg-icon-up: url(/images/chevron-up.svg);
-    --svg-icon-down: url(/images/chevron-down.svg);
     --spacing: 20px;
     --fs-bs: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
     --fs-hd-1: 11.302rem; /* headline */
