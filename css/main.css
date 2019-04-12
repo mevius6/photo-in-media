@@ -448,7 +448,6 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
         "." minmax(min-content, 1fr)
         "." minmax(min-content, 1fr)
         / minmax(min-content, 48px);
-        place-content: center end;
 }
 .page__nav > * {
     right: 0;
