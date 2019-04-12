@@ -257,6 +257,51 @@ body {
     }
 }
 
+.page__nav {
+    display: flex !important;
+    flex-flow: column;
+    min-width: 48px;
+    min-height: 600px;
+    justify-content: space-between;
+}
+/*
+.page__nav {
+    position: static;
+    display: grid !important;
+    grid:
+        "." minmax(min-content, 1fr)
+        "." minmax(min-content, 1fr)
+        / minmax(min-content, 48px);
+}*/
+.page__nav > * {
+    width: 3rem; /* ~48px */
+    height: 3rem;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+    border-color: var(--color-bd);
+    border-style: dashed;
+    border-radius: 50%;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+.page__nav > div:nth-child(1) {
+    /*align-self: start;*/
+    border-width: 0.3rem 0 0 0.3rem;
+}
+.page__nav > div:nth-child(2) {
+    /*align-self: end;*/
+    border-width: 0 0.3rem 0.3rem 0;
+}
+.page__nav > div:nth-child(1):hover,
+.page__nav > div:nth-child(2):hover {
+    border-color: var(--color-hl);
+    border-style: solid;
+    border-radius: 0;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
 .page__footer {
     left: 50%;
     bottom: 0;
@@ -431,50 +476,4 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     background-size: cover;
     width: 1rem;
     height: 1rem;
-}
-
-/*
-.page__nav {
-    display: flex !important;
-    flex-flow: column;
-    min-width: 48px;
-    min-height: 600px;
-    justify-content: space-between;
-}*/
-.page__nav {
-    position: static;
-    display: grid !important;
-    grid:
-        "." minmax(min-content, 1fr)
-        "." minmax(min-content, 1fr)
-        / minmax(min-content, 48px);
-}
-.page__nav > * {
-    right: 0;
-    width: 3rem; /* ~48px */
-    height: 3rem;
-    -webkit-transform: rotateZ(45deg);
-    transform: rotateZ(45deg);
-    border-color: var(--color-bd);
-    border-style: dashed;
-    border-radius: 50%;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
-    cursor: pointer;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-}
-.page__nav > div:nth-child(1) {
-    align-self: start;
-    border-width: 0.3rem 0 0 0.3rem;
-}
-.page__nav > div:nth-child(2) {
-    align-self: end;
-    border-width: 0 0.3rem 0.3rem 0;
-}
-.page__nav > div:nth-child(1):hover,
-.page__nav > div:nth-child(2):hover {
-    border-color: var(--color-hl);
-    border-style: solid;
-    border-radius: 0;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 }
