@@ -169,7 +169,6 @@ body {
 .page__header,
 .page__tagline {
     font-family: "SB-M", serif;
-    font-weight: 400;
 }
 .page__header {
     font-size: var(--fs-hd-1);
