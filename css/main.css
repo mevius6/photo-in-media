@@ -260,8 +260,8 @@ body {
 .page__nav {
     display: flex !important;
     flex-flow: column;
-    min-width: 48px;
-    min-height: 600px;
+    max-width: 100%;
+    min-height: 100vh;
     justify-content: space-between;
 }
 /*
