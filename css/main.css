@@ -32,11 +32,6 @@ h5 {
     font-weight: 400;
     font-style: normal;
 }
-h1 {
-    font-size: 2em;
-    font-weight: 400;
-    margin: 0.67em 0;
-}
 a {
     display: block;
     text-decoration: none;
@@ -266,6 +261,7 @@ body {
     align-items: flex-end;
     justify-content: space-between;
 }
+
 .page__nav > * {
     width: 3rem; /* ~48px */
     height: 3rem;
@@ -279,12 +275,15 @@ body {
     -webkit-transition: all 0.4s var(--ease-out-quart);
     transition: all 0.4s var(--ease-out-quart);
 }
+
 .page__nav > div:nth-child(1) {
     border-width: 0.3rem 0 0 0.3rem;
 }
+
 .page__nav > div:nth-child(2) {
     border-width: 0 0.3rem 0.3rem 0;
 }
+
 .page__nav > div:nth-child(1):hover,
 .page__nav > div:nth-child(2):hover {
     border-color: var(--color-hl);
