@@ -50,6 +50,7 @@ a {
     --color-bg: hsl(0, 0%, 98%);
     --color-bd: hsl(0, 0%, 13.3%);
     --color-hl: hsl(72, 100%, 50%);
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
     --svg-icon-fb: url(/img/fb.svg);
     --svg-icon-ig: url(/img/ig.svg);
@@ -280,15 +281,15 @@ body {
     border-radius: 50%;
     filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     cursor: pointer;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: all 400ms var(--ease-out-quart);
+    transition: all 400ms var(--ease-out-quart);
 }
 .page__nav > div:nth-child(1) {
-    /*align-self: start;*/
+    /* align-self: start; */
     border-width: 0.3rem 0 0 0.3rem;
 }
 .page__nav > div:nth-child(2) {
-    /*align-self: end;*/
+    /* align-self: end; */
     border-width: 0 0.3rem 0.3rem 0;
 }
 .page__nav > div:nth-child(1):hover,
@@ -382,7 +383,6 @@ body {
     position: relative;
     overflow: hidden;
     width: 100%;
-    margin: 0 auto;
 }
 .transform-1 {
     -webkit-transform: scale(1);
