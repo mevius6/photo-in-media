@@ -260,6 +260,7 @@ body {
     flex-flow: column;
     max-width: 100%;
     min-height: 100vh;
+    align-items: flex-end;
     justify-content: space-between;
 }
 /*
@@ -297,7 +298,7 @@ body {
     border-color: var(--color-hl);
     border-style: solid;
     border-radius: 0;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.6));
 }
 
 .page__footer {

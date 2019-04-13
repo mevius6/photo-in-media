@@ -3674,48 +3674,6 @@ CABLES.OPS["d24da018-9f3d-428b-85c9-6ff14d77548b"]={f:Ops.Math.Sine,objName:"Ops
 
 // **************************************************************
 // 
-// Ops.Boolean.IfTrueThen
-// 
-// **************************************************************
-
-Ops.Boolean.IfTrueThen = function()
-{
-CABLES.Op.apply(this,arguments);
-const op=this;
-const attachments={};
-const
-    exe=op.inTrigger("exe"),
-    boolean=op.inValueBool("boolean",false),
-    triggerThen=op.outTrigger("then"),
-    triggerElse=op.outTrigger("else");
-
-boolean.onChange=execBool;
-exe.onTriggered=exec;
-
-function execBool()
-{
-    if(exe.isLinked())return;
-    exec();
-}
-
-function exec()
-{
-    if(boolean.get() || boolean.get()>=1 ) triggerThen.trigger();
-        else triggerElse.trigger();
-}
-
-
-
-};
-
-Ops.Boolean.IfTrueThen.prototype = new CABLES.Op();
-CABLES.OPS["99892fda-8821-4660-ac57-3103d1546924"]={f:Ops.Boolean.IfTrueThen,objName:"Ops.Boolean.IfTrueThen"};
-
-
-
-
-// **************************************************************
-// 
 // Ops.Value.ValueRouter
 // 
 // **************************************************************
@@ -4193,6 +4151,48 @@ isMobile.set(true);
 
 Ops.Html.BrowserCheck.prototype = new CABLES.Op();
 CABLES.OPS["6e2ff98b-1e85-4b89-b125-fb8da727ba0c"]={f:Ops.Html.BrowserCheck,objName:"Ops.Html.BrowserCheck"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Boolean.IfTrueThen
+// 
+// **************************************************************
+
+Ops.Boolean.IfTrueThen = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+const
+    exe=op.inTrigger("exe"),
+    boolean=op.inValueBool("boolean",false),
+    triggerThen=op.outTrigger("then"),
+    triggerElse=op.outTrigger("else");
+
+boolean.onChange=execBool;
+exe.onTriggered=exec;
+
+function execBool()
+{
+    if(exe.isLinked())return;
+    exec();
+}
+
+function exec()
+{
+    if(boolean.get() || boolean.get()>=1 ) triggerThen.trigger();
+        else triggerElse.trigger();
+}
+
+
+
+};
+
+Ops.Boolean.IfTrueThen.prototype = new CABLES.Op();
+CABLES.OPS["99892fda-8821-4660-ac57-3103d1546924"]={f:Ops.Boolean.IfTrueThen,objName:"Ops.Boolean.IfTrueThen"};
 
 
 
