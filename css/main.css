@@ -46,6 +46,23 @@ a {
 
 /* ========== BS ========== */
 
+:root {
+    --color-bg: hsl(0, 0%, 98%);
+    --color-bd: hsl(0, 0%, 13.3%);
+    --color-ds: hsl(60,100%,9.8%);
+    --color-hl: hsl(72, 100%, 50%);
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --svg-icon-fb: url(/img/fb.svg);
+    --svg-icon-ig: url(/img/ig.svg);
+    --spacing: 20px;
+    --fs-bs: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+    --fs-hd-1: 11.302rem; /* headline */
+    --fs-hd-2: 2.827rem; /* tagline */
+    --fs-hd-3: 1.414rem;
+    font-size: var(--fs-bs);
+}
+
 html {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -86,19 +103,6 @@ html {
 }
 
 body {
-    --color-bg: hsl(0, 0%, 98%);
-    --color-bd: hsl(0, 0%, 13.3%);
-    --color-ds: hsl(60,100%,9.8%);
-    --color-hl: hsl(72, 100%, 50%);
-    --svg-icon-fb: url(/img/fb.svg);
-    --svg-icon-ig: url(/img/ig.svg);
-    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-    --fs-bs: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
-    --fs-hd-1: 11.302rem; /* headline */
-    --fs-hd-2: 2.827rem; /* tagline */
-    --fs-hd-3: 1.414rem;
-    --spacing: 20px;
     margin: 0;
     min-height: 100vh;
     color: var(--color-bd);
