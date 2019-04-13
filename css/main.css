@@ -49,7 +49,7 @@ a {
 :root {
     --color-bg: hsl(0, 0%, 98%);
     --color-bd: hsl(0, 0%, 13.3%);
-    --color-ds: hsl(60,100%,9.8%);
+    --color-ds: hsl(60, 100%, 9.8%);
     --color-hl: hsl(72, 100%, 50%);
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
@@ -285,8 +285,8 @@ body {
     border-radius: 50%;
     filter: drop-shadow(-1px 6px 3px var(--color-ds));
     cursor: pointer;
-    -webkit-transition: all 400ms var(--ease-out-quart);
-    transition: all 400ms var(--ease-out-quart);
+    -webkit-transition: all 0.4s var(--ease-out-quart);
+    transition: all 0.4s var(--ease-out-quart);
 }
 .page__nav > div:nth-child(1) {
     /* align-self: start; */
@@ -411,7 +411,6 @@ body {
 .grid__item-img {
     position: relative;
     z-index: 1;
-    /* height: 100%; */
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
@@ -423,14 +422,13 @@ body {
     width: 100%;
     left: 0;
     bottom: -90px;
-    /* background: var(--color-hl); */
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
 .grid__item-txt > a::after {
-    content: "";
     position: absolute;
     z-index: -1;
+    content: "";
     height: 100%;
     width: 100%;
     left: 0;
@@ -476,4 +474,5 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     background-size: cover;
     width: 1rem;
     height: 1rem;
+    cursor: pointer;
 }
