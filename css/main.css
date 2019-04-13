@@ -49,6 +49,7 @@ a {
 :root {
     --color-bg: hsl(0, 0%, 98%);
     --color-bd: hsl(0, 0%, 13.3%);
+    --color-ds: hsl(60,100%,9.8%);
     --color-hl: hsl(72, 100%, 50%);
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
@@ -256,9 +257,10 @@ body {
 }
 
 .page__nav {
+    margin: 0 auto;
     display: flex !important;
     flex-flow: column;
-    max-width: 100%;
+    max-width: 3rem;
     min-height: 100vh;
     align-items: flex-end;
     justify-content: space-between;
@@ -280,7 +282,7 @@ body {
     border-color: var(--color-bd);
     border-style: dashed;
     border-radius: 50%;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    filter: drop-shadow(-1px 6px 3px var(--color-ds));
     cursor: pointer;
     -webkit-transition: all 400ms var(--ease-out-quart);
     transition: all 400ms var(--ease-out-quart);
@@ -298,7 +300,7 @@ body {
     border-color: var(--color-hl);
     border-style: solid;
     border-radius: 0;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.6));
+    filter: drop-shadow(-1px 6px 3px hsl(60,100%,5.9%));
 }
 
 .page__footer {
@@ -319,9 +321,9 @@ body {
     line-height: 0;
 }
 
-.page__grid-wrap {
+/* .page__grid-wrap {
     width: 100vw;
-}
+} */
 
 .grid__item-credits {
     grid-area: 21 / 1;
