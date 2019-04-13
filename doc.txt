@@ -8,3 +8,4 @@ patch variables:
  - img-h - default Value:6
  - canvas-h - default Value:undefined
  - canvas-w - default Value:undefined
+ - bs between - default Value:undefined
