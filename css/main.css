@@ -300,7 +300,6 @@ body {
     border-color: var(--color-hl);
     border-style: solid;
     border-radius: 0;
-    filter: drop-shadow(-1px 6px 3px hsl(60,100%,5.9%));
 }
 
 .page__footer {
