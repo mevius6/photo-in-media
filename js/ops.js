@@ -7743,3 +7743,100 @@ Ops.Gl.Meshes.TextMesh.prototype = new CABLES.Op();
 CABLES.OPS["780487b9-503c-4e2c-913f-e1ffda7a6329"]={f:Ops.Gl.Meshes.TextMesh,objName:"Ops.Gl.Meshes.TextMesh"};
 
 
+
+
+// **************************************************************
+// 
+// Ops.Trigger.SwitchTrigger
+// 
+// **************************************************************
+
+Ops.Trigger.SwitchTrigger = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+// constants
+var NUM_PORTS = 10;
+
+// inputs
+var exePort = op.inTriggerButton('Execute');
+var switchPort = op.inValueInt('Switch Value');
+
+// outputs
+var nextTriggerPort = op.outTrigger('Next Trigger');
+var valueOutPort = op.outValue('Switched Value');
+var triggerPorts = [];
+for(var j=0; j<NUM_PORTS; j++) {
+    triggerPorts[j] = op.outTrigger('Trigger ' + j);
+}
+var defaultTriggerPort = op.outTrigger('Default Trigger');
+
+// functions
+
+/**
+ * Performs the switch case
+ */
+function update() {
+    var index = Math.round(switchPort.get());
+    if(index >= 0 && index < NUM_PORTS) {
+        valueOutPort.set(index);
+        triggerPorts[index].trigger();
+    } else {
+        valueOutPort.set(-1);
+        defaultTriggerPort.trigger();
+    }
+    nextTriggerPort.trigger();
+}
+
+// change listeners / trigger events
+exePort.onTriggered = update;
+
+};
+
+Ops.Trigger.SwitchTrigger.prototype = new CABLES.Op();
+CABLES.OPS["44ceb5d8-b040-4722-b189-a6fb8172517d"]={f:Ops.Trigger.SwitchTrigger,objName:"Ops.Trigger.SwitchTrigger"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Value.ValueToggle
+// 
+// **************************************************************
+
+Ops.Value.ValueToggle = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+// inputs
+var value0port = op.inValue("Value 0", 0);
+var value1port = op.inValue("Value 1", 1);
+var useValue1Port = op.inValueBool("Use Value 1", false);
+
+// outputs
+var outValuePort = op.outValue("Out Value", 0);
+
+// functions
+function setOutput() {
+    var useValue1 = useValue1Port.get();
+    if(useValue1) {
+        outValuePort.set(value1port.get());
+    } else {
+        outValuePort.set(value0port.get());
+    }
+}
+
+// change listeners
+value0port.onChange = setOutput;
+value1port.onChange = setOutput;
+useValue1Port.onChange = setOutput;
+
+};
+
+Ops.Value.ValueToggle.prototype = new CABLES.Op();
+
+
+
