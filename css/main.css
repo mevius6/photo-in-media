@@ -42,8 +42,8 @@ a {
 /* ========== BS ========== */
 
 :root {
-    --color-bg: hsl(0, 0%, 100%); /* hsl(0, 0%, 98%) */
-    --color-bd: hsl(0, 0%, 20%); /* hsl(0, 0%, 13.3%) */
+    --color-bg: hsl(0, 0%, 98%);
+    --color-bd: hsl(0, 0%, 13.3%);
     --color-ds: hsl(72, 100%, 9.8%);
     --color-hl: hsl(72, 100%, 50%);
     --transition: 0.4s;
