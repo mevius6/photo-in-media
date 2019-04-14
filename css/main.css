@@ -44,7 +44,7 @@ a {
 :root {
     --color-bg: hsl(0, 0%, 98%);
     --color-bd: hsl(0, 0%, 13.3%);
-    --color-ds: hsl(72.2,100%,12.5%); /* hsl(72.9, 12.3%, 22.4%) */
+    --color-ds: hsl(72.2, 100%, 12.5%); /* hsl(72.9, 12.3%, 22.4%) */
     --color-hl: hsl(72, 100%, 50%);
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
@@ -418,17 +418,18 @@ body {
     width: 100%;
     left: 0;
     top: 0;
-    transition: inherit;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
     background: var(--color-hl);
-}
-.grid__item-txt h5 {
-    font-size: var(--fs-hd-3);
-    padding: var(--spacing) 0 5px;
 }
 .grid__item-txt p {
     background-color: var(--color-hl);
     font-family: "SB-I", serif;
     padding-bottom: var(--spacing);
+}
+.grid__item-txt h5 {
+    font-size: var(--fs-hd-3);
+    padding: var(--spacing) 0 5px;
 }
 
 .grid__item:hover .grid__item-img {
