@@ -42,10 +42,11 @@ a {
 /* ========== BS ========== */
 
 :root {
-    --color-bg: hsl(0, 0%, 98%);
-    --color-bd: hsl(0, 0%, 13.3%);
-    --color-ds: hsl(72.3,100%,8.6%);
+    --color-bg: hsl(0, 0%, 100%); /* hsl(0, 0%, 98%) */
+    --color-bd: hsl(0, 0%, 20%); /* hsl(0, 0%, 13.3%) */
+    --color-ds: hsl(72, 100%, 9.8%);
     --color-hl: hsl(72, 100%, 50%);
+    --transition: 0.4s;
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
     --svg-icon-fb: url(/img/fb.svg);
@@ -411,9 +412,9 @@ body {
     transition: 0.4s;
 }
 .grid__item-txt > a::after {
+    content: "";
     position: absolute;
     z-index: -1;
-    content: "";
     height: 100%;
     width: 100%;
     left: 0;
@@ -458,7 +459,7 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     display: inline-block;
     background: transparent var(--svg-icon-ig) no-repeat center center;
     background-size: cover;
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
 }
