@@ -194,9 +194,9 @@ body {
 }
 .page__cta-btn:before,
 .page__cta-btn:after {
-    content: "";
     position: absolute;
     z-index: -1;
+    content: "";
     transition: inherit;
 }
 .page__cta-btn:hover {
