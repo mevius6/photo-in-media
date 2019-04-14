@@ -69,7 +69,7 @@ html {
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    overflow: hidden !important; 
+    overflow: hidden !important;
 }
 
 *,
@@ -294,6 +294,8 @@ body {
 }
 
 .page__footer {
+    position: absolute;
+    z-index: 9999;
     left: 50%;
     bottom: 0;
     transform: translate(-50%, -50%);
