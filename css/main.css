@@ -44,7 +44,7 @@ a {
 :root {
     --color-bg: hsl(0, 0%, 98%);
     --color-bd: hsl(0, 0%, 13.3%);
-    --color-ds: hsl(72.9, 12.3%, 22.4%);
+    --color-ds: hsl(72.2,100%,12.5%); /* hsl(72.9, 12.3%, 22.4%) */
     --color-hl: hsl(72, 100%, 50%);
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
