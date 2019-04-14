@@ -258,7 +258,7 @@ body {
     display: flex !important;
     flex-flow: column;
     width: 3rem;
-    min-height: 100vh;
+    min-height: 50vmax;
     align-items: flex-end;
     justify-content: space-between;
 }
