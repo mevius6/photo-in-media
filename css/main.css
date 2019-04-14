@@ -463,3 +463,10 @@ a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
     height: 1.5rem;
     cursor: pointer;
 }
+
+@media screen and (min-width: 35em) {
+    a[target="_blank"][href*="instagram.com/photo_in_media/"]::after {
+        width: 1rem;
+        height: 1rem;
+    }
+}
