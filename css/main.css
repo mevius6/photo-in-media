@@ -1,43 +1,4 @@
-/* ========== Normalize ========== */
-
-html {
-    line-height: 1.15;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-canvas,
-img,
-svg {
-    vertical-align: middle;
-}
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-    border-style: none;
-}
-canvas {
-    display: inline-block;
-}
-body {
-    margin: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5 {
-    font-weight: 400;
-    font-style: normal;
-}
-a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background-color: transparent;
-}
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}canvas,img,svg{vertical-align:middle}a,img{display:block}img{max-width:100%;height:auto;-o-object-fit:cover;object-fit:cover;border-style:none}canvas{display:inline-block}body{margin:0}h1,h2,h3,h4,h5{font-weight:400;font-style:normal}a{text-decoration:none;color:inherit;background-color:transparent}
 
 /* ========== BS ========== */
 
@@ -46,11 +7,10 @@ a {
     --color-bd: hsl(0, 0%, 13.3%);
     --color-ds: hsl(72, 100%, 9.8%);
     --color-hl: hsl(72, 100%, 50%);
-    --transition: 0.4s;
+    --svg-icon-ig: url(/img/ig.svg);
+    --timing: 0.4s;
     --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
-    --svg-icon-fb: url(/img/fb.svg);
-    --svg-icon-ig: url(/img/ig.svg);
     --spacing: 20px;
     --fs-bs: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
     --fs-hd-1: 11.302rem; /* headline */
@@ -210,7 +170,7 @@ body {
 }
 .page__cta-btn:hover:after {
     background: var(--color-hl);
-    transition-delay: 0.4s;
+    transition-delay: var(--timing);
 }
 .page__cta-btn:before {
     height: 100%;
@@ -274,8 +234,8 @@ body {
     border-radius: 50%;
     filter: drop-shadow(-1px 6px 3px var(--color-ds));
     cursor: pointer;
-    -webkit-transition: all 0.4s var(--ease-out-quart);
-    transition: all 0.4s var(--ease-out-quart);
+    -webkit-transition: all var(--timing) var(--ease-out-quart);
+    transition: all var(--timing) var(--ease-out-quart);
 }
 
 .page__nav > div:nth-child(1) {
@@ -378,14 +338,14 @@ body {
 .transform-1 {
     -webkit-transform: scale(1);
     transform: scale(1);
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    -webkit-transition: all var(--timing) ease-in-out;
+    transition: all var(--timing) ease-in-out;
 }
 .transform-2 {
     -webkit-transform: rotate(15deg) scale(1.4);
     transform: rotate(15deg) scale(1.4);
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+    -webkit-transition: all var(--timing) ease-in-out;
+    transition: all var(--timing) ease-in-out;
 }
 .grid__item:hover .transform-1 {
     -webkit-transform: scale(1.2);
@@ -399,8 +359,8 @@ body {
 .grid__item-img {
     position: relative;
     z-index: 1;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: var(--timing);
+    transition: var(--timing);
 }
 
 .grid__item-txt {
@@ -410,8 +370,8 @@ body {
     width: 100%;
     left: 0;
     bottom: -90px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: var(--timing);
+    transition: var(--timing);
 }
 .grid__item-txt > a::after {
     content: "";
@@ -421,8 +381,8 @@ body {
     width: 100%;
     left: 0;
     top: 0;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transition: var(--timing);
+    transition: var(--timing);
     background: var(--color-hl);
 }
 .grid__item-txt p {
@@ -448,7 +408,6 @@ body {
 
 @media screen and (max-width: 414px) {
     .grid__item:hover .grid__item-txt {
-        bottom: 0;
         -webkit-transform: translateY(-10px);
         transform: translateY(-10px);
     }
