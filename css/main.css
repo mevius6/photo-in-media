@@ -68,7 +68,8 @@ html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /* overflow: hidden !important; */
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden !important; 
 }
 
 *,
@@ -113,7 +114,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
     /* text-rendering: optimizeLegibility; */
     text-align: center;
-    overflow: hidden;
 }
 
 .page__loader-wrap {
