@@ -24,12 +24,12 @@ html {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+    overflow: hidden !important;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
-    overflow: hidden !important;
 }
 
 *,
@@ -255,7 +255,6 @@ body {
 
 .page__footer {
     position: absolute;
-    z-index: 9999;
     left: 50%;
     bottom: 0;
     transform: translate(-50%, -50%);
