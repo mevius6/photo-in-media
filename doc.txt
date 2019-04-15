@@ -9,3 +9,5 @@ patch variables:
  - canvas-h - default Value:undefined
  - canvas-w - default Value:undefined
  - bs between - default Value:undefined
+ - MobileS - default Value:320
+ - MobileM - default Value:375
