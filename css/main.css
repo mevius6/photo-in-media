@@ -1,4 +1,4 @@
-html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}canvas,img,svg{vertical-align:middle}a,img{display:block}img{max-width:100%;height:auto;-o-object-fit:cover;object-fit:cover;border-style:none}canvas{display:inline-block}body{margin:0}h1,h2,h3,h4,h5{font-weight:400;font-style:normal}a{text-decoration:none;color:inherit;background-color:transparent}
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}canvas,img,svg{vertical-align:middle}canvas{display:inline-block}a,img{display:block}img{max-width:100%;height:auto;-o-object-fit:cover;object-fit:cover;border-style:none}h1,h2,h3,h4,h5{font-weight:400;font-style:normal}a{text-decoration:none;color:inherit;background-color:transparent}
 
 /* ========== BS ========== */
 
@@ -60,7 +60,7 @@ html {
 }
 
 body {
-    margin: 0;
+    margin-top: 0;
     min-height: 100vh;
     color: var(--color-bd);
     font-family: "SB-M", serif;
@@ -275,6 +275,8 @@ body {
 .grid__item-credits {
     grid-area: 21 / 1;
     align-self: center;
+    font-size: var(--fs-hd-3);
+    padding: var(--spacing) 0 5px;
 }
 
 .grid {
@@ -307,9 +309,6 @@ body {
 
         .grid__item-credits {
             grid-area: 7 / 3;
-
-            font-size: var(--fs-hd-3);
-            padding: var(--spacing) 0 5px;
         }
 
         .grid {
