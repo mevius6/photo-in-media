@@ -46,16 +46,16 @@ html {
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    overflow: hidden !important;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    overflow: hidden !important;
 }
 *,
-:after,
-:before {
+::after,
+::before {
     margin: 0;
     border: 0;
     padding: 0;
@@ -170,8 +170,8 @@ body {
     transition: all var(--duration) var(--timing-ease-in-out-quart);
     cursor: pointer;
 }
-.page__cta-btn:after,
-.page__cta-btn:before {
+.page__cta-btn::after,
+.page__cta-btn::before {
     position: absolute;
     z-index: -1;
     content: "";
@@ -181,14 +181,14 @@ body {
     color: var(--color-bd);
     transition-delay: var(--duration);
 }
-.page__cta-btn:hover:before {
+.page__cta-btn:hover::before {
     transition-delay: 0s;
 }
-.page__cta-btn:hover:after {
+.page__cta-btn:hover::after {
     background: var(--color-hl);
     transition-delay: var(--duration);
 }
-.page__cta-btn:before {
+.page__cta-btn::before {
     height: 100%;
     width: 0;
     left: 50%;
@@ -204,11 +204,11 @@ body {
     bottom: 0;
     background: var(--color-hl);
 }
-.page__cta-btn:hover:before {
+.page__cta-btn:hover::before {
     left: 0;
     width: 100%;
 }
-.page__cta-btn:hover:after {
+.page__cta-btn:hover::after {
     top: 0;
     height: 100%;
 }
@@ -272,7 +272,7 @@ body {
 }
 .page__footer > div:nth-child(2n + 1) {
     grid-area: 2/1;
-    line-height: 0;
+    line-height: 1; /* 0 */
 }
 .grid__item-credits {
     grid-area: 21/1;
