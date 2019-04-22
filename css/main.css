@@ -286,7 +286,7 @@ body {
     grid-gap: calc(var(--spacing) / 2);
 }
 @media screen and (min-width: 35em) {
-    .grid::after {
+    .grid:after {
         content: "";
         display: block;
         clear: both;
@@ -299,7 +299,7 @@ body {
             width: auto;
             margin: 0;
         }
-        .grid::after {
+        .grid:after {
             content: none;
         }
         .grid__item-credits {
