@@ -26,8 +26,7 @@
   <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-3.4.0.min.js"><\/script>')
   </script>
-  <script src="js/loader.js"></script>
-
+  
   <script type="text/javascript" src="js/libs.core.min.js"></script>
   <script type="text/javascript" src="js/cables.min.js"></script>
 
@@ -42,7 +41,6 @@
     }
 
     function patchFinishedLoading() {
-      // The patch is ready now, all assets have been loaded
       $(".page__loader").fadeOut("slow", function () {
         $(".page__loader-wrap").fadeOut();
       });
