@@ -43,6 +43,9 @@
 
     function patchFinishedLoading() {
       // The patch is ready now, all assets have been loaded
+      $(".page__loader").fadeOut("slow", function () {
+        $(".page__loader-wrap").fadeOut();
+      });
     }
 
     document.addEventListener("DOMContentLoaded", function (event) {
