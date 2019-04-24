@@ -30,7 +30,7 @@ html {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
-    overflow: hidden !important;
+    overflow: hidden;
 }
 canvas,
 img,
@@ -41,7 +41,6 @@ canvas {
     display: inline-block;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -84,6 +83,18 @@ a:hover {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: inherit;
+}
+::-moz-selection {
+    background-color: transparent;
+    color: inherit;
+}
+::selection {
+    background-color: transparent;
+    color: inherit;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
 }
 :root {
     --color-bg: hsl(0, 0%, 98.4%);
@@ -168,11 +179,17 @@ body.loading {
     font-family: "SB-M", serif;
 }
 .app__title {
-    font-size: var(--fs-h1);
-    letter-spacing: 0.03em;
+    font-size: 7.993rem;
 }
 .app__tagline {
     font-size: var(--fs-h2);
+    mix-blend-mode: overlay;
+    z-index: 99999;
+}
+.credits,
+.app__title,
+.app__tagline {
+    text-align: left;
 }
 .app__cta-btn,
 .app__title,
@@ -183,10 +200,11 @@ body.loading {
     position: absolute;
     left: 50%;
     bottom: 0;
+    padding: 1em 0 1em calc(var(--spacing) / 1.5);
+    letter-spacing: calc(var(--spacing) / 1.5);
+
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    padding: 1em 0 1em 1em;
-    letter-spacing: 1em;
     transition: all var(--duration) var(--timing-ease-in-out-quart);
     cursor: pointer;
 }
@@ -231,20 +249,6 @@ body.loading {
 .app__cta-btn:hover::after {
     top: 0;
     height: 100%;
-}
-@media (max-width: 600px) {
-    .app__title {
-        font-size: 7.993rem;
-    }
-    .credits,
-    .app__title,
-    .app__tagline {
-        text-align: left;
-    }
-    .app__cta-btn {
-        padding: 1em 0 1em calc(var(--spacing) / 1.5);
-        letter-spacing: calc(var(--spacing) / 1.5);
-    }
 }
 .app__nav {
     margin: 0 auto;
@@ -297,26 +301,31 @@ body.loading {
 
 /* ========= LT =========
 */
-.app__grid-wrap {
+.app__overflow {
+    /*
     position: absolute;
+    z-index: 1000;
     top: 0;
     left: 0px;
+    */
     width: 100%;
     height: 100vh;
-    z-index: 1000;
-    pointer-events: all;
     margin: auto;
     padding: 0;
     display: block;
     opacity: 1;
-    overflow: auto;    
-    -webkit-overflow-scrollin: touch;
+    pointer-events: all;
+    /* overflow: auto; */
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-perspective: 700px;
-    perspective: 700px; /* 500px */
-    perspective-origin: 50% 50%;
+    perspective: 700px; /* ≥ 500px */
+    perspective-origin: 50% 50%; /* initial coordinate system */
 }
 .grid {
     margin: 0 auto;
@@ -326,9 +335,10 @@ body.loading {
     grid-template-columns: 1fr;
     grid-gap: calc(var(--spacing) / 2);
 
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transform: rotateY(40deg);
-    transform: rotateY(40deg);
+    -webkit-transform: rotateY(45deg);
+    transform: rotateY(45deg);
 }
 .grid__item {
     position: relative;
@@ -438,10 +448,23 @@ body.loading {
             display: grid;
             -ms-grid-columns: 1fr var(--spacing) 1fr var(--spacing) 1fr;
             grid-template-columns: repeat(3, calc(100% / 3));
+
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: rotateY(0deg) translate3d(-1.7%, 50%, -3rem);
+            transform: rotateY(0deg) translate3d(-1.7%, 50%, -3rem);
         }
         .grid,
         .app__footer {
             grid-gap: var(--spacing);
+        }
+        .app__title {
+            font-size: var(--fs-h1);
+            letter-spacing: 0.03em;
+        }
+        .app__cta-btn {
+            padding: 1em 0 1em 1em;
+            letter-spacing: 1em;
         }
     }
 }
