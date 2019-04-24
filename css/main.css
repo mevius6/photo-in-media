@@ -290,7 +290,7 @@ body.loading {
     transform: translateZ(0);
     -webkit-perspective: 700px;
     perspective: 700px; /* ≥500px */
-    -webkit-perspective-origin: center;
+    -webkit-perspective-origin: 50% 50%;
     perspective-origin: 50% 50%; /* initial-coord-sys */
 }
 .grid {
@@ -303,8 +303,8 @@ body.loading {
 
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transform: rotateY(45deg) translate3d(0%, 10%, 0);
-    transform: rotateY(45deg) translate3d(0%, 10%, 0);
+    -webkit-transform: rotateY(45deg) translate3d(0%, 0%, 0);
+    transform: rotateY(45deg) translate3d(0%, 0%, 0);
 }
 .grid__item {
     position: relative;
@@ -313,6 +313,12 @@ body.loading {
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: center;
+}
+.grid-item:nth-child(1) {
+    min-height: 50vmax;
+    display: flex;
+    flex-flow: column;
     justify-content: center;
 }
 .grid__item:nth-child(21) {
@@ -388,6 +394,12 @@ body.loading {
     font-size: var(--fs-h3);
     padding: var(--spacing) 0 5px;
 }
+.tagline {
+    font-size: var(--fs-h3);
+    text-transform: uppercase;
+    text-align: left;
+}
+
 @media screen and (min-width: 35em) {
     .grid:after {
         content: "";
@@ -407,11 +419,6 @@ body.loading {
         }
         .grid-item:nth-child(1) {
             grid-column: 1 / span 3;
-            min-height: 50vmax;
-
-            display: flex;
-            flex-flow: column;
-            justify-content: center;
         }
         .grid__item:nth-child(21) {
             grid-area: 7/3;
