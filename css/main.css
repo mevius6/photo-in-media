@@ -289,9 +289,9 @@ body.loading {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-perspective: 700px;
-    perspective: 700px; /* ≥ 500px */
+    perspective: 700px; /* ≥500px */
     -webkit-perspective-origin: center;
-    perspective-origin: 50% 50%; /* initial coordinate sys */
+    perspective-origin: 50% 50%; /* initial-coord-sys */
 }
 .grid {
     margin: 0 auto;
