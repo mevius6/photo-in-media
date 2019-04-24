@@ -182,9 +182,13 @@ body.loading {
     font-size: 7.993rem;
 }
 .app__tagline {
+    position: absolute;
+    z-index: 1000;
+    top: 60px;
     font-size: var(--fs-h2);
     mix-blend-mode: overlay;
-    z-index: 99999;
+    -webkit-transform: rotateY(45deg);
+    transform: rotateY(45deg);
 }
 .credits,
 .app__title,
@@ -335,7 +339,7 @@ body.loading {
 
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transform: rotateY(45deg)  translate3d(0%, 10%, 0);
+    -webkit-transform: rotateY(45deg) translate3d(0%, 10%, 0);
     transform: rotateY(45deg) translate3d(0%, 10%, 0);
 }
 .grid__item {
@@ -449,16 +453,26 @@ body.loading {
 
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
-            -webkit-transform: rotateY(0deg) translate3d(-1.7%, 50%, -3rem);
-            transform: rotateY(0deg) translate3d(-1.7%, 50%, -3rem);
+            -webkit-transform: rotateY(0deg) translate3d(-20px, 25%, -40px);
+            transform: rotateY(0deg) translate3d(-20px, 25%, -40px);
         }
         .grid,
         .app__footer {
             grid-gap: var(--spacing);
         }
+        .credits,
+        .app__title,
+        .app__tagline {
+            text-align: center;
+        }
         .app__title {
             font-size: var(--fs-h1);
             letter-spacing: 0.03em;
+        }
+        .app__tagline {
+            mix-blend-mode: normal;
+            -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
         }
         .app__cta-btn {
             padding: 1em 0 1em 1em;
