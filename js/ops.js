@@ -4932,161 +4932,6 @@ CABLES.OPS["392e65eb-4ebe-4adb-8711-e4cfe059c6c9"]={f:Ops.Html.ElementFadeInOut,
 
 // **************************************************************
 // 
-// Ops.Html.DivElement2
-// 
-// **************************************************************
-
-Ops.Html.DivElement2 = function()
-{
-CABLES.Op.apply(this,arguments);
-const op=this;
-const attachments={};
-const
-    inId=op.inString("Id"),
-    inClass=op.inString("Class"),
-    inText=op.inString("Text","Hello Div"),
-    inStyle=op.inValueEditor("Style","position:absolute;z-index:9999;","css"),
-    inInteractive=op.inValueBool("Interactive",false),
-    inVisible=op.inValueBool("Visible",true),
-    inBreaks=op.inValueBool("Convert Line Breaks",false),
-    outElement=op.outObject("DOM Element"),
-    outHover=op.outValue("Hover"),
-    outClicked=op.outTrigger("Clicked");
-
-var listenerElement=null;
-
-var div = document.createElement('div');
-var canvas = op.patch.cgl.canvas.parentElement;
-
-canvas.appendChild(div);
-outElement.set(div);
-
-inClass.onChange=updateClass;
-inBreaks.onChange=inText.onChange=updateText;
-inStyle.onChange=updateStyle;
-inInteractive.onChange=updateInteractive;
-inVisible.onChange=updateVisibility;
-
-updateText();
-updateStyle();
-
-op.onDelete=removeElement;
-
-
-function setCSSVisible(visible)
-{
-    if(!visible)
-    {
-        div.style.visibility='hidden';
-        div.style.display='none';
-    }
-    else
-    {
-        div.style.visibility='visible';
-        div.style.display='block';
-    }
-}
-
-function updateVisibility()
-{
-    setCSSVisible(inVisible.get());
-}
-
-function updateText()
-{
-    var str=inText.get();
-    if(inBreaks.get()) str = str.replace(/(?:\r\n|\r|\n)/g, '<br>');
-    div.innerHTML=str;
-    outElement.set(null);
-    outElement.set(div);
-}
-
-function removeElement()
-{
-    div.parentNode.removeChild(div);
-}
-
-function updateStyle()
-{
-    div.setAttribute("style",inStyle.get());
-    updateVisibility();
-    outElement.set(null);
-    outElement.set(div);
-}
-
-function updateClass()
-{
-    div.setAttribute("class",inClass.get());
-}
-
-function onMouseEnter()
-{
-    outHover.set(true);
-}
-
-function onMouseLeave()
-{
-    outHover.set(false);
-}
-
-function onMouseClick()
-{
-    outClicked.trigger();
-}
-
-function updateInteractive()
-{
-    removeListeners();
-    if(inInteractive.get()) addListeners();
-}
-
-inId.onChange=function()
-{
-    div.id=inId.get();
-};
-
-function removeListeners()
-{
-    if(listenerElement)
-    {
-        listenerElement.removeEventListener('click', onMouseClick);
-        listenerElement.removeEventListener('mouseleave', onMouseLeave);
-        listenerElement.removeEventListener('mouseenter', onMouseEnter);
-        listenerElement=null;
-    }
-}
-
-function addListeners()
-{
-    if(listenerElement)removeListeners();
-
-    listenerElement=div;
-
-    if(listenerElement)
-    {
-        listenerElement.addEventListener('click', onMouseClick);
-        listenerElement.addEventListener('mouseleave', onMouseLeave);
-        listenerElement.addEventListener('mouseenter', onMouseEnter);
-    }
-}
-
-op.addEventListener("onEnabledChange",function(enabled)
-{
-    setCSSVisible( div.style.visibility!='visible' );
-});
-
-
-
-};
-
-Ops.Html.DivElement2.prototype = new CABLES.Op();
-CABLES.OPS["db36db6d-83e4-4d27-b84c-8a20067aaffc"]={f:Ops.Html.DivElement2,objName:"Ops.Html.DivElement2"};
-
-
-
-
-// **************************************************************
-// 
 // Ops.Html.TransformCSS3DElement
 // 
 // **************************************************************
@@ -5248,6 +5093,161 @@ op.addEventListener("onEnabledChange",function(enabled)
 
 Ops.Html.TransformCSS3DElement.prototype = new CABLES.Op();
 CABLES.OPS["7b81ed97-6fb9-4044-a731-962a2a11db27"]={f:Ops.Html.TransformCSS3DElement,objName:"Ops.Html.TransformCSS3DElement"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Html.DivElement2
+// 
+// **************************************************************
+
+Ops.Html.DivElement2 = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+const
+    inId=op.inString("Id"),
+    inClass=op.inString("Class"),
+    inText=op.inString("Text","Hello Div"),
+    inStyle=op.inValueEditor("Style","position:absolute;z-index:9999;","css"),
+    inInteractive=op.inValueBool("Interactive",false),
+    inVisible=op.inValueBool("Visible",true),
+    inBreaks=op.inValueBool("Convert Line Breaks",false),
+    outElement=op.outObject("DOM Element"),
+    outHover=op.outValue("Hover"),
+    outClicked=op.outTrigger("Clicked");
+
+var listenerElement=null;
+
+var div = document.createElement('div');
+var canvas = op.patch.cgl.canvas.parentElement;
+
+canvas.appendChild(div);
+outElement.set(div);
+
+inClass.onChange=updateClass;
+inBreaks.onChange=inText.onChange=updateText;
+inStyle.onChange=updateStyle;
+inInteractive.onChange=updateInteractive;
+inVisible.onChange=updateVisibility;
+
+updateText();
+updateStyle();
+
+op.onDelete=removeElement;
+
+
+function setCSSVisible(visible)
+{
+    if(!visible)
+    {
+        div.style.visibility='hidden';
+        div.style.display='none';
+    }
+    else
+    {
+        div.style.visibility='visible';
+        div.style.display='block';
+    }
+}
+
+function updateVisibility()
+{
+    setCSSVisible(inVisible.get());
+}
+
+function updateText()
+{
+    var str=inText.get();
+    if(inBreaks.get()) str = str.replace(/(?:\r\n|\r|\n)/g, '<br>');
+    div.innerHTML=str;
+    outElement.set(null);
+    outElement.set(div);
+}
+
+function removeElement()
+{
+    div.parentNode.removeChild(div);
+}
+
+function updateStyle()
+{
+    div.setAttribute("style",inStyle.get());
+    updateVisibility();
+    outElement.set(null);
+    outElement.set(div);
+}
+
+function updateClass()
+{
+    div.setAttribute("class",inClass.get());
+}
+
+function onMouseEnter()
+{
+    outHover.set(true);
+}
+
+function onMouseLeave()
+{
+    outHover.set(false);
+}
+
+function onMouseClick()
+{
+    outClicked.trigger();
+}
+
+function updateInteractive()
+{
+    removeListeners();
+    if(inInteractive.get()) addListeners();
+}
+
+inId.onChange=function()
+{
+    div.id=inId.get();
+};
+
+function removeListeners()
+{
+    if(listenerElement)
+    {
+        listenerElement.removeEventListener('click', onMouseClick);
+        listenerElement.removeEventListener('mouseleave', onMouseLeave);
+        listenerElement.removeEventListener('mouseenter', onMouseEnter);
+        listenerElement=null;
+    }
+}
+
+function addListeners()
+{
+    if(listenerElement)removeListeners();
+
+    listenerElement=div;
+
+    if(listenerElement)
+    {
+        listenerElement.addEventListener('click', onMouseClick);
+        listenerElement.addEventListener('mouseleave', onMouseLeave);
+        listenerElement.addEventListener('mouseenter', onMouseEnter);
+    }
+}
+
+op.addEventListener("onEnabledChange",function(enabled)
+{
+    setCSSVisible( div.style.visibility!='visible' );
+});
+
+
+
+};
+
+Ops.Html.DivElement2.prototype = new CABLES.Op();
+CABLES.OPS["db36db6d-83e4-4d27-b84c-8a20067aaffc"]={f:Ops.Html.DivElement2,objName:"Ops.Html.DivElement2"};
 
 
 
@@ -6896,5 +6896,65 @@ useValue1Port.onChange = setOutput;
 
 Ops.Value.ValueToggle.prototype = new CABLES.Op();
 
+
+
+
+
+// **************************************************************
+// 
+// Ops.Html.CSS2
+// 
+// **************************************************************
+
+Ops.Html.CSS2 = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+var code=op.inStringEditor("css code");
+
+var styleEle=null;
+var eleId='css_'+CABLES.uuid();
+
+code.onChange=update;
+update();
+
+
+function getCssContent()
+{
+    return code.get();
+}
+
+function update()
+{
+    styleEle=document.getElementById(eleId);
+
+    if(styleEle)
+    {
+        styleEle.textContent=getCssContent();
+    }
+    else
+    {
+        styleEle  = document.createElement('style');
+        styleEle.type = 'text/css';
+        styleEle.id = eleId;
+        styleEle.textContent=getCssContent();
+
+        var head  = document.getElementsByTagName('body')[0];
+        head.appendChild(styleEle);
+    }
+}
+
+op.onDelete=function()
+{
+    styleEle=document.getElementById(eleId);
+    if(styleEle)styleEle.remove();
+};
+
+
+};
+
+Ops.Html.CSS2.prototype = new CABLES.Op();
+CABLES.OPS["a56d3edd-06ad-44ed-9810-dbf714600c67"]={f:Ops.Html.CSS2,objName:"Ops.Html.CSS2"};
 
 
