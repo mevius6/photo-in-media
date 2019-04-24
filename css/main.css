@@ -410,7 +410,7 @@ body.loading {
         }
         .grid-item:nth-child(1) {
             grid-column: 1 / span 3;
-            min-height: 100vmax;
+            min-height: 50vmax;
 
             display: flex;
             flex-flow: column;
