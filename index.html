@@ -2,37 +2,71 @@
 <html class="no-js" lang="ru">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Медиа Портрет</title>
-  <meta name="description" content="Проект студентов курса «Фотография в медиа»" />
-  <meta name="keywords" content="rodchenko art school, photo in media, photo, interview, webgl, cables.gl" />
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="preload" href="/fonts/SangBleuEmpire-Medium-WebXL.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/SangBleuEmpire-RegularItalic-WebXL.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <meta charset="utf-8" />
+    <title>Медиа Портрет</title>
+    <meta name="description" content="Проект студентов курса «Фотография в медиа»" />
+    <meta name="keywords" content="rodchenko art school, photo in media, photo, interview, webgl, cables.gl" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="preload" href="/fonts/SangBleuEmpire-Medium-WebXL.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/SangBleuEmpire-RegularItalic-WebXL.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 <body>
 
-  <div class="app__loader-wrap">
-    <div class="app__loader"></div>
-  </div>
+    <div class="app__loader-wrap">
+        <div class="app__loader"></div>
+    </div>
 
-  <div class="app__content">
-    <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
-  </div>
+    <div class="app__content">
 
-  <script src="https://code.jquery.com/jquery-3.4.0.min.js"
-    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
-  <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-3.4.0.min.js"><\/script>')
-  </script>
+        <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
+    </div>
 
-  <script type="text/javascript" src="js/libs.core.min.js"></script>
-  <script type="text/javascript" src="js/cables.min.js"></script>
-  <script type="text/javascript" src="js/ops.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/vendor/jquery-3.4.0.min.js"><\/script>')
+    </script>
+    <script src="js/loader.js"></script>
+    <script type="text/javascript" src="js/libs.core.min.js"></script>
+    <script type="text/javascript" src="js/cables.min.js"></script>
+
+    <script type="text/javascript" src="js/ops.js"></script>
+
+    <script>
+        /**
+         * Called when there was a cables error.
+         * @param {string} errId - ID of the error, e.g. 'NO_WEBGL' or 'NO_WEBAUDIO' 
+         *                         when the browser does not support the used APIs
+         * @param {string} errMsg - The error message
+         */
+        function showError(errId, errMsg) {
+            alert('An error occured: ' + errId + ', ' + errMsg);
+        }
+
+        function patchInitialized() {
+            // You can now access the patch object (CABLES.patch), register variable watchers and so on
+        }
+
+        function patchFinishedLoading() {
+            // The patch is ready now, all assets have been loaded
+        }
+
+        document.addEventListener('DOMContentLoaded', function (event) {
+            CABLES.patch = new CABLES.Patch({
+                patchFile: 'js/app.json',
+                prefixAssetPath: '',
+                glCanvasId: 'glcanvas',
+                glCanvasResizeToWindow: true,
+                onError: showError,
+                onPatchLoaded: patchInitialized,
+                onFinishedLoading: patchFinishedLoading,
+            });
+        });
+    </script>
 </body>
 
 </html>
