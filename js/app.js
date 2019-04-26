@@ -25,7 +25,7 @@ if (screen && screen.width > 480) {
     document.addEventListener("DOMContentLoaded", function(event) {
         CABLES.patch = new CABLES.Patch({
             patchFile: "js/app.json",
-            prefixAssetPath: "img",
+            prefixAssetPath: "",
             glCanvasId: "glcanvas",
             glCanvasResizeToWindow: true,
             onError: showError,

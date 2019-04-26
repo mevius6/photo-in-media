@@ -1,4 +1,60 @@
-html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;box-sizing:border-box;overflow:hidden}canvas,img,svg{vertical-align:middle}canvas{display:inline-block;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}a,figcaption,figure,img,main{display:block}img{max-width:100%;height:auto;-o-object-fit:cover;object-fit:cover;border-style:none}h1,h2,h3,h4,h5{font-weight:400;font-style:normal}h1{font-size:2em;margin:.67em 0}a{text-decoration:none;color:inherit;background-color:transparent}a,a:active,a:hover{outline:0}
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+canvas,
+img,
+svg {
+    vertical-align: middle;
+}
+canvas {
+    display: inline-block;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+a,
+figcaption,
+figure,
+img,
+main {
+    display: block;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 400;
+    font-style: normal;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+a,
+a:active,
+a:hover {
+    outline: 0;
+}
 
 *,
 *::after,
@@ -133,19 +189,19 @@ body {
 .tagline {
     text-align: left;
 }
-.paragraph,
-.heading,
+.name,
+.caption,
 .credits {
     text-align: center;
 }
-.paragraph {
+.name {
+    font-size: var(--fs-h3);
+    padding: var(--spacing) 0 5px;
+}
+.caption {
     font-family: "SB-I", serif;
     padding-bottom: var(--spacing);
     background-color: var(--color-hl);
-}
-.heading {
-    font-size: var(--fs-h3);
-    padding: var(--spacing) 0 5px;
 }
 .credits {
     font-size: var(--fs-h3);
@@ -222,13 +278,11 @@ body {
     height: 100%;
 }
 
-.app__content {
-    position: fixed; /* absolute */
+#app {
+    position: fixed;
     z-index: 1000;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -236,21 +290,28 @@ body {
     -ms-flex-flow: column;
     flex-flow: column;
     align-items: center;
+}
+
+.content {
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;
     -webkit-perspective-origin: center center;
     perspective-origin: 50% 50%;
     -webkit-perspective: 700px;
     perspective: 700px;
     overflow-x: hidden;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrollin: touch;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 .content__grid {
-    position: relative;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
     grid-gap: calc(var(--spacing) / 2);
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -303,8 +364,8 @@ body {
 }
 
 .grid__item-img,
-.grid__item-text,
-.grid__item-text > .link::after {
+.grid__item-link,
+.grid__item-link > .link::after {
     -webkit-transition: var(--duration);
     transition: var(--duration);
 }
@@ -312,35 +373,35 @@ body {
     position: relative;
     z-index: 1;
 }
-.grid__item-text,
-.grid__item-text > .link::after {
+.grid__item-link,
+.grid__item-link > .link::after {
     position: absolute;
     width: 100%;
     left: 0;
 }
-.grid__item-text > .link::after {
+.grid__item-link > .link::after {
     content: "";
     z-index: -1;
     height: 100%;
     top: 0;
     background: var(--color-hl);
 }
-.grid__item-text {
+.grid__item-link {
     z-index: 2;
     height: 90px;
     bottom: -90px;
 }
 .grid__item:hover .grid__item-img,
-.grid__item:hover .grid__item-text {
+.grid__item:hover .grid__item-link {
     -webkit-transform: translateY(-40px);
     transform: translateY(-40px);
 }
-.grid__item:hover .grid__item-text {
+.grid__item:hover .grid__item-link {
     bottom: 0;
 }
 
 @media screen and (max-width: 414px) {
-    .grid__item:hover .grid__item-text {
+    .grid__item:hover .grid__item-link {
         -webkit-transform: translateY(-10px);
         transform: translateY(-10px);
     }
