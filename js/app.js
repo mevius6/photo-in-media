@@ -1,5 +1,4 @@
 if (screen && screen.width > 480) {
-    $("main").hide();
     /**
      * Called when there was a cables error.
      * @param {string} errId - ID of the error, e.g. 'NO_WEBGL' or 'NO_WEBAUDIO'
@@ -17,8 +16,8 @@ if (screen && screen.width > 480) {
     function patchFinishedLoading() {
         // The patch is ready now, all assets have been loaded
         setTimeout(function() {
-            $(".app__loader-wrap").fadeOut("slow", function() {
-                $("body").removeClass("loading");
+            $(".app__loader").fadeOut("slow", function() {
+                $(".app__loader-wrap").fadeOut();
             });
         }, 1000);
     }
@@ -26,7 +25,7 @@ if (screen && screen.width > 480) {
     document.addEventListener("DOMContentLoaded", function(event) {
         CABLES.patch = new CABLES.Patch({
             patchFile: "js/app.json",
-            prefixAssetPath: "",
+            prefixAssetPath: "img",
             glCanvasId: "glcanvas",
             glCanvasResizeToWindow: true,
             onError: showError,
@@ -35,9 +34,11 @@ if (screen && screen.width > 480) {
         });
     });
 } else {
-    $(window).on("load", function() {
+    $(window).on("load", function(event) {
         setTimeout(function() {
-            $(".app__loader-wrap").fadeOut("slow");
+            $(".app__loader-wrap").fadeOut("slow", function() {
+                $("main").removeClass("hidden");
+            });
         }, 1000);
     });
     $("canvas").hide();

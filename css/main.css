@@ -223,7 +223,7 @@ body {
 }
 
 .app__content {
-    position: absolute; /* fixed */
+    position: fixed; /* absolute */
     z-index: 1000;
     top: 0;
     left: 0;
@@ -246,8 +246,7 @@ body {
 }
 
 .content__grid {
-    margin: 0 auto;
-    position: fixed;
+    position: relative;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
@@ -408,4 +407,8 @@ body {
             margin-bottom: 1rem;
         }
     }
+}
+
+.hidden {
+    display: none !important;
 }
