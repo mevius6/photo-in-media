@@ -129,33 +129,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-@-webkit-keyframes loading {
-    0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 0;
-    }
-}
-@keyframes loading {
-    0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        opacity: 1;
-    }
-    to {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 0;
-    }
-}
-
 .app__loader-wrap {
-    z-index: 9999;
+    z-index: 10000;
     display: -ms-grid;
     display: grid;
     place-items: center;
@@ -165,13 +140,29 @@ body {
 }
 
 .app__loader {
+    opacity: 1;
     width: 2rem;
     height: 2rem;
-    margin: 2rem;
+    margin: auto;
     border-radius: 50%;
     background: var(--color-bd);
-    -webkit-animation: 1s loading ease-out infinite;
-    animation: 1s loading ease-out infinite;
+    -webkit-animation: 1s loading ease-in infinite alternate forwards;
+    animation: 1s loading ease-in infinite alternate forwards;
+}
+
+@-webkit-keyframes loading {
+    to {
+        -webkit-transform: scale3d(0.25, 0.25, 1);
+        transform: scale3d(0.25, 0.25, 1);
+        opacity: 0;
+    }
+}
+@keyframes loading {
+    to {
+        -webkit-transform: scale3d(0.25, 0.25, 1);
+        transform: scale3d(0.25, 0.25, 1);
+        opacity: 0;
+    }
 }
 
 .title,
@@ -464,9 +455,6 @@ body {
     }
 }
 
-.glcanvas {
-    z-index: -1;
-}
 .hidden {
     display: none !important;
 }
