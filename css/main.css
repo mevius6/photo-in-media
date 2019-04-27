@@ -302,7 +302,7 @@ body {
     perspective: 700px;
     overflow-x: hidden;
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrollin: touch;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
