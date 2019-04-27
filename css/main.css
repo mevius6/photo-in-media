@@ -8,7 +8,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-w
     box-sizing: inherit;
 }
 
-/*::-moz-selection {
+::-moz-selection {
     background-color: transparent;
     color: inherit;
 }
@@ -16,7 +16,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-w
 ::selection {
     background-color: transparent;
     color: inherit;
-}*/
+}
 
 ::-webkit-scrollbar {
     width: 0px;
