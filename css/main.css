@@ -99,12 +99,12 @@ body {
 }
 
 .app__loader-wrap {
+    width: 100%;
+    height: 100vh;
     z-index: 9999;
     display: -ms-grid;
     display: grid;
     place-items: center;
-    width: 100%;
-    min-height: 100vh;
     background: var(--color-bg);
 }
 
