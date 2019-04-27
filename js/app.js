@@ -2,7 +2,7 @@ var main = document.querySelector("main");
 
 var mql = window.matchMedia("(max-width: 600px)");
 
-function noJS(e) {
+function screenTest(e) {
     if (e.matches) {
         $(window).on("load", function(event) {
             setTimeout(function() {
@@ -28,6 +28,7 @@ function noJS(e) {
         }
 
         function patchFinishedLoading() {
+            // The patch is ready now, all assets have been loaded
             setTimeout(function() {
                 $(".app__loader").fadeOut("slow", function() {
                     $(".app__loader-wrap").fadeOut();
@@ -49,8 +50,8 @@ function noJS(e) {
     }
 }
 
-noJS(mql);
-mql.addListener(noJS);
+screenTest(mql);
+mql.addListener(screenTest);
 
 mql.onchange = function() {
     console.log(mql);
