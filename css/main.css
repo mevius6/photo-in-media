@@ -283,7 +283,6 @@ body {
     z-index: 1000;
     top: 0;
     left: 0;
-    display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -302,7 +301,7 @@ body {
     perspective: 700px;
     overflow-x: hidden;
     overflow-y: scroll;
-    -webkit-overflow-scrollin: touch;
+    /* -webkit-overflow-scrolling: touch; */
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
@@ -325,7 +324,6 @@ body {
     position: relative;
     overflow: hidden;
     width: 100%;
-    display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
