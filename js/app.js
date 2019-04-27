@@ -2,7 +2,7 @@ var main = document.querySelector("main");
 
 var mql = window.matchMedia("(max-width: 600px)");
 
-function screenTest(e) {
+function deviceWidth(e) {
     if (e.matches) {
         $(window).on("load", function(event) {
             setTimeout(function() {
@@ -50,8 +50,8 @@ function screenTest(e) {
     }
 }
 
-screenTest(mql);
-mql.addListener(screenTest);
+deviceWidth(mql);
+mql.addListener(deviceWidth);
 
 mql.onchange = function() {
     console.log(mql);
