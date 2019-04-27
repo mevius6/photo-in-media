@@ -178,16 +178,13 @@ body {
 .tagline {
     font-family: "SB-M", serif;
     text-transform: uppercase;
+    text-align: left;
 }
 .title {
     font-size: 7.993rem;
 }
 .tagline {
     font-size: var(--fs-h3);
-}
-.title,
-.tagline {
-    text-align: left;
 }
 .name,
 .caption,
@@ -246,13 +243,6 @@ body {
     color: var(--color-bd);
     transition-delay: var(--duration);
 }
-.app__cta-btn:hover::before {
-    transition-delay: 0s;
-}
-.app__cta-btn:hover::after {
-    background: var(--color-hl);
-    transition-delay: var(--duration);
-}
 .app__cta-btn::before {
     top: 0;
     left: 50%;
@@ -272,10 +262,13 @@ body {
 .app__cta-btn:hover::before {
     left: 0;
     width: 100%;
+    transition-delay: 0s;
 }
 .app__cta-btn:hover::after {
     top: 0;
     height: 100%;
+    background: var(--color-hl);
+    transition-delay: var(--duration);
 }
 
 #app {
