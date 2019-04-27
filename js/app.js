@@ -2,6 +2,8 @@ var supportsCssVars = function() {
     return window.CSS && CSS.supports("font-size", "var(--fs-bs)");
 };
 
+var canvas = document.getElementById("glcanvas");
+
 var main = document.querySelector("main");
 
 var mql = window.matchMedia("(max-width: 600px)");
@@ -9,14 +11,15 @@ var mql = window.matchMedia("(max-width: 600px)");
 if (supportsCssVars()) {
     function deviceWidth(e) {
         if (e.matches) {
-            $(window).on("load", function(event) {
+            window.onload = function() {
                 setTimeout(function() {
-                    $(".app__loader-wrap").fadeOut("slow", function() {
-                        $("main").removeClass("hidden");
+                    $(".app__loader").fadeOut("slow", function() {
+                        $(".app__loader-wrap").fadeOut();
                     });
                 }, 1000);
-            });
-            $("canvas").hide();
+            };
+            canvas.classList.add("hidden");
+            main.classList.remove("hidden");
         } else {
             /**
              * Called when there was a cables error.

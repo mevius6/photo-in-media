@@ -41,7 +41,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-w
 
 @font-face {
     font-family: "SB-M";
-    src: url(/fonts/SangBleuEmpire-Medium-WebXL.woff2) format("woff2");
+    src: url(/fonts/SangBleuEmpire-Medium.woff2) format("woff2");
     font-style: normal;
     font-weight: 400;
     font-stretch: normal;
@@ -50,7 +50,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-w
 
 @font-face {
     font-family: "SB-I";
-    src: url(/fonts/SangBleuEmpire-RegularItalic-WebXL.woff2) format("woff2");
+    src: url(/fonts/SangBleuEmpire-RegularItalic.woff2) format("woff2");
     font-style: normal;
     font-weight: 400;
     font-stretch: normal;
@@ -73,6 +73,7 @@ body {
 }
 
 .app__loader-wrap {
+    position: absolute;
     z-index: 10000;
     display: -ms-grid;
     display: grid;
