@@ -62,5 +62,7 @@ if (supportsCssVars()) {
         console.log(mql);
     };
 } else {
-    alert("Your browser does not support CSS Variables and/or CSS.supports.");
+    alert(
+        "Ваш браузер устарел, пожалуйста, используйте более современный браузер чтобы улучшить свои впечатления и безопасность!"
+    );
 }
