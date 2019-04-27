@@ -326,7 +326,7 @@ body {
 }
 .grid__item:nth-child(1) {
     grid-column: 1;
-    min-height: 101vh;
+    min-height: 100vh;
 }
 .grid__item:nth-child(22) {
     grid-area: 22 / 1;
@@ -365,6 +365,7 @@ body {
 .grid__item-img {
     position: relative;
     z-index: 1;
+    line-height: 0;
 }
 .grid__item-link,
 .grid__item-link > .link::after {
@@ -463,6 +464,9 @@ body {
     }
 }
 
+.glcanvas {
+    z-index: -1;
+}
 .hidden {
     display: none !important;
 }
