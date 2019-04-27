@@ -236,8 +236,8 @@ body {
     align-items: center;
     max-width: 100%;
     width: 100vw;
-    height: 100vh;
-    -webkit-perspective-origin: center center;
+    min-height: 100vh;
+    -webkit-perspective-origin: 50% 50%; /* center */
     perspective-origin: 50% 50%;
     -webkit-perspective: 700px;
     perspective: 700px;
@@ -252,7 +252,8 @@ body {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     grid-gap: calc(var(--spacing) / 2);
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -274,7 +275,7 @@ body {
 }
 .grid__item:nth-child(1) {
     grid-column: 1;
-    min-height: 101vh;
+    min-height: 100vh;
 }
 .grid__item:nth-child(22) {
     grid-area: 22 / 1;
