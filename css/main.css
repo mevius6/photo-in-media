@@ -236,6 +236,7 @@ body {
     align-items: center;
     max-width: 100%;
     width: 100vw;
+    height: 100vh;
     min-height: 100vh;
     -webkit-perspective-origin: 50% 50%; /* center */
     perspective-origin: 50% 50%;
