@@ -320,8 +320,9 @@ body {
     -webkit-transition: all var(--duration) var(--timing-ease-in-out-quart);
     transition: all var(--duration) var(--timing-ease-in-out-quart);
 
-    grid-template-rows: repeat(21,1fr);
+    grid-template-rows: repeat(21, 1fr);
     grid-auto-flow: column;
+    overflow: auto;
 }
 
 .grid__item {
