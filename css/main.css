@@ -321,7 +321,6 @@ body {
     transition: all var(--duration) var(--timing-ease-in-out-quart);
 
     grid-template-rows: repeat(21,1fr);
-    height: 100vw;
     grid-auto-flow: column;
 }
 
