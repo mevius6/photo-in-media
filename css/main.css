@@ -87,7 +87,7 @@ body {
     opacity: 1;
     width: 2rem;
     height: 2rem;
-    margin: auto;
+    margin: 2rem;
     border-radius: 50%;
     background: var(--color-bd);
     -webkit-animation: 1s loading ease-in infinite alternate forwards;
