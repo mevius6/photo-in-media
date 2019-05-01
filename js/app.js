@@ -1,5 +1,3 @@
-console.clear();
-
 var supportsCssVars = function() {
     return window.CSS && CSS.supports("font-size", "var(--fs-bs)");
 };
