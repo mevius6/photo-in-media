@@ -2,6 +2,12 @@ var supportsCssVars = function() {
     return window.CSS && CSS.supports("font-size", "var(--fs-bs)");
 };
 
+var fadeOutLoader = function() {
+    $(".app__loader").fadeOut("slow", function() {
+        $(".app__loader-wrap").fadeOut();
+    });
+};
+
 var canvas = document.getElementById("glcanvas");
 
 var main = document.querySelector("main");
@@ -12,11 +18,7 @@ if (supportsCssVars()) {
     function deviceWidth(e) {
         if (e.matches) {
             window.onload = function() {
-                setTimeout(function() {
-                    $(".app__loader").fadeOut("slow", function() {
-                        $(".app__loader-wrap").fadeOut();
-                    });
-                }, 1000);
+                setTimeout(fadeOutLoader, 1000);
             };
             canvas.classList.add("hidden");
             main.classList.remove("hidden");
@@ -37,11 +39,7 @@ if (supportsCssVars()) {
 
             function patchFinishedLoading() {
                 // The patch is ready now, all assets have been loaded
-                setTimeout(function() {
-                    $(".app__loader").fadeOut("slow", function() {
-                        $(".app__loader-wrap").fadeOut();
-                    });
-                }, 1000);
+                setTimeout(fadeOutLoader, 1000);
             }
 
             document.addEventListener("DOMContentLoaded", function(event) {

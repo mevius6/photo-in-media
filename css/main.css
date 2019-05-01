@@ -148,8 +148,8 @@ body {
     margin: auto;
     border-radius: 50%;
     background: var(--color-bd);
-    -webkit-animation: 1.4s loading ease-in infinite alternate forwards;
-    animation: 1.4s loading ease-in infinite alternate forwards;
+    -webkit-animation: 1s loading ease-in infinite alternate forwards;
+    animation: 1s loading ease-in infinite alternate forwards;
 }
 
 @-webkit-keyframes loading {
