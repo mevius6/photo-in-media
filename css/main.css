@@ -371,12 +371,12 @@ body {
             display: -ms-grid;
             display: grid;
             -ms-grid-columns: 1fr var(--spacing) 1fr var(--spacing) 1fr;
-            grid-template-columns: repeat(3, calc(100% / 3));
+            grid-template-columns: repeat(3, 1fr); /* (3, calc(100% / 3)) */
             grid-gap: var(--spacing);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
-            -webkit-transform: rotateY(0deg) translate3d(-20px, 0, -40px);
-            transform: rotateY(0deg) translate3d(-20px, 0, -40px);
+            -webkit-transform: rotateY(0deg) translate3d(0, 0, 0);
+            transform: rotateY(0deg) translate3d(0, 0, 0);
         }
         .title,
         .tagline,
