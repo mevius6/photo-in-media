@@ -2267,183 +2267,6 @@ CABLES.OPS["a466bc1f-06e9-4595-8849-bffb9fe22f99"]={f:Ops.Sequence,objName:"Ops.
 
 // **************************************************************
 // 
-// Ops.Gl.Texture
-// 
-// **************************************************************
-
-Ops.Gl.Texture = function()
-{
-CABLES.Op.apply(this,arguments);
-const op=this;
-const attachments={};
-var filename=op.inFile("file");
-var tfilter=op.inValueSelect("filter",['nearest','linear','mipmap']);
-var wrap=op.inValueSelect("wrap",['repeat','mirrored repeat','clamp to edge'],"clamp to edge");
-var flip=op.inValueBool("flip",false);
-var unpackAlpha=op.inValueBool("unpackPreMultipliedAlpha",false);
-
-var textureOut=op.outTexture("texture");
-var width=op.outValue("width");
-var height=op.outValue("height");
-var loading=op.outValue("loading");
-var ratio=op.outValue("Aspect Ratio");
-
-unpackAlpha.hidePort();
-
-const cgl=op.patch.cgl;
-var cgl_filter=0;
-var cgl_wrap=0;
-
-filename.onChange=flip.onChange=function(){reloadSoon();};
-
-tfilter.onChange=onFilterChange;
-wrap.onChange=onWrapChange;
-unpackAlpha.onChange=function(){ reloadSoon(); };
-
-var timedLoader=0;
-
-tfilter.set('mipmap');
-wrap.set('repeat');
-
-textureOut.set(CGL.Texture.getEmptyTexture(cgl));
-
-var setTempTexture=function()
-{
-    var t=CGL.Texture.getTempTexture(cgl);
-    textureOut.set(t);
-};
-
-var loadingId=null;
-var tex=null;
-function reloadSoon(nocache)
-{
-    // if(!loadingId)loadingId=cgl.patch.loading.start('textureOp',filename.get());
-
-    // if(timedLoader!=0)
-    // {
-    //     console.log('tex load canceled...');
-    // }
-    clearTimeout(timedLoader);
-    timedLoader=setTimeout(function()
-    {
-        // console.log('tex load yay...');
-        realReload(nocache);
-    },30);
-}
-
-function realReload(nocache)
-{
-    if(!loadingId)loadingId=cgl.patch.loading.start('textureOp',filename.get());
-
-    var url=op.patch.getFilePath(String(filename.get()));
-    if(nocache)url+='?rnd='+CABLES.generateUUID();
-
-    if((filename.get() && filename.get().length>1))
-    {
-        loading.set(true);
-
-        if(tex)tex.delete();
-        tex=CGL.Texture.load(cgl,url,
-            function(err)
-            {
-                if(err)
-                {
-                    setTempTexture();
-                    op.uiAttr({'error':'could not load texture "'+filename.get()+'"'});
-                    cgl.patch.loading.finished(loadingId);
-                    return;
-                }
-                else op.uiAttr({'error':null});
-                textureOut.set(tex);
-                width.set(tex.width);
-                height.set(tex.height);
-                ratio.set(tex.width/tex.height);
-
-                if(!tex.isPowerOfTwo()) op.uiAttr(
-                    {
-                        hint:'texture dimensions not power of two! - texture filtering will not work.',
-                        warning:null
-                    });
-                    else op.uiAttr(
-                        {
-                            hint:null,
-                            warning:null
-                        });
-
-                textureOut.set(null);
-                textureOut.set(tex);
-                // tex.printInfo();
-
-            },{
-                wrap:cgl_wrap,
-                flip:flip.get(),
-                unpackAlpha:unpackAlpha.get(),
-                filter:cgl_filter
-            });
-
-        textureOut.set(null);
-        textureOut.set(tex);
-
-        if(!textureOut.get() && nocache)
-        {
-        }
-
-        cgl.patch.loading.finished(loadingId);
-    }
-    else
-    {
-        cgl.patch.loading.finished(loadingId);
-        setTempTexture();
-    }
-}
-
-
-function onFilterChange()
-{
-    if(tfilter.get()=='nearest') cgl_filter=CGL.Texture.FILTER_NEAREST;
-    if(tfilter.get()=='linear') cgl_filter=CGL.Texture.FILTER_LINEAR;
-    if(tfilter.get()=='mipmap') cgl_filter=CGL.Texture.FILTER_MIPMAP;
-
-    reloadSoon();
-}
-
-function onWrapChange()
-{
-    if(wrap.get()=='repeat') cgl_wrap=CGL.Texture.WRAP_REPEAT;
-    if(wrap.get()=='mirrored repeat') cgl_wrap=CGL.Texture.WRAP_MIRRORED_REPEAT;
-    if(wrap.get()=='clamp to edge') cgl_wrap=CGL.Texture.WRAP_CLAMP_TO_EDGE;
-
-    reloadSoon();
-}
-
-op.onFileChanged=function(fn)
-{
-    console.log(fn);
-    if(filename.get() && filename.get().indexOf(fn)>-1)
-    {
-        textureOut.set(null);
-        textureOut.set(CGL.Texture.getTempTexture(cgl));
-
-        realReload(true);
-    }
-};
-
-
-
-
-
-
-
-};
-
-Ops.Gl.Texture.prototype = new CABLES.Op();
-CABLES.OPS["466394d4-6c1a-4e5d-a057-0063ab0f096a"]={f:Ops.Gl.Texture,objName:"Ops.Gl.Texture"};
-
-
-
-
-// **************************************************************
-// 
 // Ops.Gl.Meshes.Rectangle
 // 
 // **************************************************************
@@ -3575,6 +3398,183 @@ function parse()
 
 Ops.Array.ParseArray2.prototype = new CABLES.Op();
 CABLES.OPS["c974de41-4ce4-4432-b94d-724741109c71"]={f:Ops.Array.ParseArray2,objName:"Ops.Array.ParseArray2"};
+
+
+
+
+// **************************************************************
+// 
+// Ops.Gl.Texture
+// 
+// **************************************************************
+
+Ops.Gl.Texture = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+var filename=op.inFile("file");
+var tfilter=op.inValueSelect("filter",['nearest','linear','mipmap']);
+var wrap=op.inValueSelect("wrap",['repeat','mirrored repeat','clamp to edge'],"clamp to edge");
+var flip=op.inValueBool("flip",false);
+var unpackAlpha=op.inValueBool("unpackPreMultipliedAlpha",false);
+
+var textureOut=op.outTexture("texture");
+var width=op.outValue("width");
+var height=op.outValue("height");
+var loading=op.outValue("loading");
+var ratio=op.outValue("Aspect Ratio");
+
+unpackAlpha.hidePort();
+
+const cgl=op.patch.cgl;
+var cgl_filter=0;
+var cgl_wrap=0;
+
+filename.onChange=flip.onChange=function(){reloadSoon();};
+
+tfilter.onChange=onFilterChange;
+wrap.onChange=onWrapChange;
+unpackAlpha.onChange=function(){ reloadSoon(); };
+
+var timedLoader=0;
+
+tfilter.set('mipmap');
+wrap.set('repeat');
+
+textureOut.set(CGL.Texture.getEmptyTexture(cgl));
+
+var setTempTexture=function()
+{
+    var t=CGL.Texture.getTempTexture(cgl);
+    textureOut.set(t);
+};
+
+var loadingId=null;
+var tex=null;
+function reloadSoon(nocache)
+{
+    // if(!loadingId)loadingId=cgl.patch.loading.start('textureOp',filename.get());
+
+    // if(timedLoader!=0)
+    // {
+    //     console.log('tex load canceled...');
+    // }
+    clearTimeout(timedLoader);
+    timedLoader=setTimeout(function()
+    {
+        // console.log('tex load yay...');
+        realReload(nocache);
+    },30);
+}
+
+function realReload(nocache)
+{
+    if(!loadingId)loadingId=cgl.patch.loading.start('textureOp',filename.get());
+
+    var url=op.patch.getFilePath(String(filename.get()));
+    if(nocache)url+='?rnd='+CABLES.generateUUID();
+
+    if((filename.get() && filename.get().length>1))
+    {
+        loading.set(true);
+
+        if(tex)tex.delete();
+        tex=CGL.Texture.load(cgl,url,
+            function(err)
+            {
+                if(err)
+                {
+                    setTempTexture();
+                    op.uiAttr({'error':'could not load texture "'+filename.get()+'"'});
+                    cgl.patch.loading.finished(loadingId);
+                    return;
+                }
+                else op.uiAttr({'error':null});
+                textureOut.set(tex);
+                width.set(tex.width);
+                height.set(tex.height);
+                ratio.set(tex.width/tex.height);
+
+                if(!tex.isPowerOfTwo()) op.uiAttr(
+                    {
+                        hint:'texture dimensions not power of two! - texture filtering will not work.',
+                        warning:null
+                    });
+                    else op.uiAttr(
+                        {
+                            hint:null,
+                            warning:null
+                        });
+
+                textureOut.set(null);
+                textureOut.set(tex);
+                // tex.printInfo();
+
+            },{
+                wrap:cgl_wrap,
+                flip:flip.get(),
+                unpackAlpha:unpackAlpha.get(),
+                filter:cgl_filter
+            });
+
+        textureOut.set(null);
+        textureOut.set(tex);
+
+        if(!textureOut.get() && nocache)
+        {
+        }
+
+        cgl.patch.loading.finished(loadingId);
+    }
+    else
+    {
+        cgl.patch.loading.finished(loadingId);
+        setTempTexture();
+    }
+}
+
+
+function onFilterChange()
+{
+    if(tfilter.get()=='nearest') cgl_filter=CGL.Texture.FILTER_NEAREST;
+    if(tfilter.get()=='linear') cgl_filter=CGL.Texture.FILTER_LINEAR;
+    if(tfilter.get()=='mipmap') cgl_filter=CGL.Texture.FILTER_MIPMAP;
+
+    reloadSoon();
+}
+
+function onWrapChange()
+{
+    if(wrap.get()=='repeat') cgl_wrap=CGL.Texture.WRAP_REPEAT;
+    if(wrap.get()=='mirrored repeat') cgl_wrap=CGL.Texture.WRAP_MIRRORED_REPEAT;
+    if(wrap.get()=='clamp to edge') cgl_wrap=CGL.Texture.WRAP_CLAMP_TO_EDGE;
+
+    reloadSoon();
+}
+
+op.onFileChanged=function(fn)
+{
+    console.log(fn);
+    if(filename.get() && filename.get().indexOf(fn)>-1)
+    {
+        textureOut.set(null);
+        textureOut.set(CGL.Texture.getTempTexture(cgl));
+
+        realReload(true);
+    }
+};
+
+
+
+
+
+
+
+};
+
+Ops.Gl.Texture.prototype = new CABLES.Op();
+CABLES.OPS["466394d4-6c1a-4e5d-a057-0063ab0f096a"]={f:Ops.Gl.Texture,objName:"Ops.Gl.Texture"};
 
 
 
