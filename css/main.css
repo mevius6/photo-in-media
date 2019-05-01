@@ -375,8 +375,8 @@ body {
             grid-gap: var(--spacing);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
-            -webkit-transform: rotateY(0deg) translate3d(0, 0, 0);
-            transform: rotateY(0deg) translate3d(0, 0, 0);
+            -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
         }
         .title,
         .tagline,
@@ -385,7 +385,7 @@ body {
         }
         .title {
             font-size: var(--fs-h1);
-            letter-spacing: 0.03em;
+            letter-spacing: .03em;
         }
         .tagline {
             font-size: var(--fs-h2);
