@@ -133,7 +133,6 @@ body {
 .caption {
     font-family: SB-I, serif;
     padding-bottom: var(--spacing);
-    /* background-color: var(--color-hl); */
 }
 .credits {
     font-size: var(--fs-h3);
@@ -232,6 +231,7 @@ body {
     /* -webkit-overflow-scrolling: touch; */
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    scroll-behavior: smooth;
 }
 
 .content__grid {
@@ -363,7 +363,7 @@ body {
             display: -ms-grid;
             display: grid;
             -ms-grid-columns: 1fr var(--spacing) 1fr var(--spacing) 1fr;
-            grid-template-columns: repeat(3, 1fr); /* (3, calc(100% / 3)) */
+            grid-template-columns: repeat(3, 1fr);
             grid-gap: var(--spacing);
             -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
