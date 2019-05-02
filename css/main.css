@@ -77,8 +77,9 @@ body {
     z-index: 10000;
     display: -ms-grid;
     display: grid;
+    /*
     -ms-grid-columns: 1fr;
-    grid: "." 100% / 1fr;
+    grid: "." 100% / 1fr; */
     place-content: center;
     width: 100%;
     min-height: 100vh;
@@ -90,6 +91,7 @@ body {
     width: 2rem;
     height: 2rem;
     margin: auto;
+    /* align-self: center; */
     border-radius: 50%;
     background: var(--color-bd);
     -webkit-animation: 1s loading ease-in infinite alternate forwards;
