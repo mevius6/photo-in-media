@@ -1,4 +1,4 @@
-# THANKS
+# CREDITS
 
     - ops by cables user pandur (https://cables.gl/user/pandur)
     - cables by undefined development (http://undev.studio)
