@@ -9,13 +9,15 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-w
 }
 
 ::-moz-selection {
-    background-color: transparent;
+    background: transparent;
     color: inherit;
+    text-shadow: none;
 }
 
 ::selection {
-    background-color: transparent;
+    background: transparent;
     color: inherit;
+    text-shadow: none;
 }
 
 ::-webkit-scrollbar {
@@ -62,7 +64,6 @@ body {
     min-height: 100vh;
     color: var(--color-bd);
     font-family: "SB-M", serif;
-    font-size: var(--fs-bs);
     font-weight: 400;
     line-height: 1.45;
     -webkit-font-feature-settings: "kern" on;
@@ -70,6 +71,13 @@ body {
     font-feature-settings: "kern";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.message {
+    margin: 0.2em 0;
+    background: #fff;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 .app__loader-wrap {
@@ -332,9 +340,8 @@ body {
 
 @media only screen and (min-width: 35em) {
     .grid:after {
-        content: "";
-        display: block;
-        clear: both;
+        content: " ";
+        display: table;
     }
 
     @supports (display: grid) {
@@ -346,7 +353,7 @@ body {
             margin: 0;
         }
         .grid:after {
-            content: none;
+            clear: both;
         }
         .grid__item:nth-child(1) {
             grid-column: 1 / span 3;
