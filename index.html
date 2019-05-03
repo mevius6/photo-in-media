@@ -16,6 +16,9 @@
 </head>
 
 <body>
+    <!--[if IE]>
+    <p class="message">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
 
     <div class="app__loader-wrap">
         <div class="app__loader"></div>
@@ -243,6 +246,7 @@
         <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
     </div>
 
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
     <script>
