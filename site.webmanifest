@@ -1,6 +1,9 @@
 {
-  "short_name": "",
-  "name": "",
+  "lang": "ru",
+  "dir": "ltr",
+  "short_name": "Медиа Портрет",
+  "name": "Медиа Портрет",
+  "description": "Проект студентов курса «Фотография в медиа»",
   "icons": [{
     "src": "icon.png",
     "type": "image/png",
@@ -8,5 +11,14 @@
   }],
   "start_url": "/?utm_source=homescreen",
   "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "theme_color": "#fafafa",
+  "screenshots": [{
+    "src": "screenshots/1x.jpg",
+    "sizes": "640x480",
+    "type": "image/jpeg"
+  },{
+    "src": "screenshots/2x.jpg",
+    "sizes": "1280x920",
+    "type": "image/jpeg"
+  }]
 }
