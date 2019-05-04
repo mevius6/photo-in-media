@@ -3726,6 +3726,47 @@ CABLES.OPS["45cc0011-ada8-4423-8f5b-39a3810b8389"]={f:Ops.Math.Incrementor,objNa
 
 // **************************************************************
 // 
+// Ops.Array.ArrayIterator
+// 
+// **************************************************************
+
+Ops.Array.ArrayIterator = function()
+{
+CABLES.Op.apply(this,arguments);
+const op=this;
+const attachments={};
+const
+    exe=op.inTrigger("exe"),
+    arr=op.inArray("array"),
+    trigger=op.outTrigger('trigger'),
+    idx=op.addOutPort(new CABLES.Port(op,"index")),
+    val=op.addOutPort(new CABLES.Port(op,"value"));
+
+exe.onTriggered=function()
+{
+    if(!arr.get())return;
+
+    for(var i=0;i<arr.get().length;i++)
+    {
+        idx.set(i);
+        val.set(arr.get()[i]);
+        trigger.trigger();
+        op.patch.instancing.increment();
+    }
+
+};
+
+
+};
+
+Ops.Array.ArrayIterator.prototype = new CABLES.Op();
+CABLES.OPS["ec280011-1190-4333-9a68-adb4904fca1a"]={f:Ops.Array.ArrayIterator,objName:"Ops.Array.ArrayIterator"};
+
+
+
+
+// **************************************************************
+// 
 // Ops.Vars.SetVariable
 // 
 // **************************************************************
@@ -3879,47 +3920,6 @@ op.onDelete=function()
 
 Ops.Vars.Variable.prototype = new CABLES.Op();
 CABLES.OPS["1b9c4504-d69a-43c2-b747-8ca795a8950f"]={f:Ops.Vars.Variable,objName:"Ops.Vars.Variable"};
-
-
-
-
-// **************************************************************
-// 
-// Ops.Array.ArrayIterator
-// 
-// **************************************************************
-
-Ops.Array.ArrayIterator = function()
-{
-CABLES.Op.apply(this,arguments);
-const op=this;
-const attachments={};
-const
-    exe=op.inTrigger("exe"),
-    arr=op.inArray("array"),
-    trigger=op.outTrigger('trigger'),
-    idx=op.addOutPort(new CABLES.Port(op,"index")),
-    val=op.addOutPort(new CABLES.Port(op,"value"));
-
-exe.onTriggered=function()
-{
-    if(!arr.get())return;
-
-    for(var i=0;i<arr.get().length;i++)
-    {
-        idx.set(i);
-        val.set(arr.get()[i]);
-        trigger.trigger();
-        op.patch.instancing.increment();
-    }
-
-};
-
-
-};
-
-Ops.Array.ArrayIterator.prototype = new CABLES.Op();
-CABLES.OPS["ec280011-1190-4333-9a68-adb4904fca1a"]={f:Ops.Array.ArrayIterator,objName:"Ops.Array.ArrayIterator"};
 
 
 

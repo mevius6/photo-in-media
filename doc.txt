@@ -1,7 +1,5 @@
 patch variables:
 
- - Max - default Value:146
- - Min - default Value:0
  - posX - default Value:0
  - ApproachInterpolationResult - default Value:undefined
  - img-w - default Value:4
