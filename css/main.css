@@ -29,7 +29,6 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-w
     --color-bg: hsl(0, 0%, 98.4%);
     --color-bd: hsl(0, 0%, 13.3%);
     --color-hl: hsl(72, 100%, 50%);
-    --svg-icon-ig: url(img/ig.svg);
     --timing-ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
     --timing-ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
     --duration: .4s;
