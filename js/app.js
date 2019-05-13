@@ -53,12 +53,11 @@ if (supportsCssVars()) {
                     onFinishedLoading: patchFinishedLoading
                 });
             });
-
-            window.lazyLoadOptions = {
-                elements_selector: "[loading=lazy]",
-                use_native: true
-            };
         }
+        window.lazyLoadOptions = {
+            elements_selector: "[loading=lazy]",
+            use_native: true
+        };
     }
 
     deviceWidth(mql);
