@@ -54,10 +54,6 @@ if (supportsCssVars()) {
                 });
             });
         }
-        window.lazyLoadOptions = {
-            elements_selector: "[loading=lazy]",
-            use_native: true
-        };
     }
 
     deviceWidth(mql);
