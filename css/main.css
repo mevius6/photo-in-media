@@ -34,7 +34,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-w
     --duration: .4s;
     --spacing: 20px;
     --fs-bs: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
-    --fs-h1: 11.302em; /* 5.653rem */
+    --fs-h1: 11.302em;
     --fs-h2: 2.827rem;
     --fs-h3: 1.414rem;
     font-size: var(--fs-bs);
