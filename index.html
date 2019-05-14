@@ -2,304 +2,308 @@
 <html dir="ltr" lang="ru-RU" class="no-js">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Медиа Портрет</title>
-    <meta name="description" content="Проект студентов курса «Фотография в медиа»" />
-    <meta name="keywords" content="rodchenko art school, photo in media, modern, webgl, cables.gl" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="apple-touch-icon" href="icon.png" />
-    <link rel="preload" href="fonts/SangBleuEmpire-Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/SangBleuEmpire-RegularItalic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <meta name="theme-color" content="#fbfbfb">
+	<meta charset="utf-8" />
+	<title>Медиа Портрет</title>
+	<meta name="description" content="Проект студентов курса «Фотография в медиа»" />
+	<meta name="keywords" content="rodchenko art school, photo in media, modern, webgl, cables.gl" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="manifest" href="site.webmanifest" />
+	<link rel="apple-touch-icon" href="icon.png" />
+	<link rel="preload" href="fonts/SangBleuEmpire-Medium.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/SangBleuEmpire-RegularItalic.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<meta name="theme-color" content="#fbfbfb">
 </head>
 
 <body>
-    <div class="app__loader-wrap">
-        <div class="app__loader"></div>
-    </div>
+	<div class="app__loader-wrap">
+		<div class="app__loader"></div>
+	</div>
 
-    <div id="app" class="content">
-        <main class="content__grid hidden">
-            <header class="grid__item">
-                <h2 class="tagline">Этот проект объединяет<br>в себе 20 историй о людях, которые работают в медиа.
-                </h2>
-            </header>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/1.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/1.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait1/" rel="noopener" target="_blank">
-                        <h5 class="name">Анастасия Безрукова</h5>
-                        <p class="caption">Сет-дизайнер, художница</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/2.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/2.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="https://media-portrait2-git-master.rodchenkoartschool.now.sh/" rel="noopener" target="_blank">
-                        <h5 class="name">Евгения Зайцева</h5>
-                        <p class="caption">Видеограф</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/3.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/3.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link"> <a class="link"
-                        href="https://media-portrait3-git-master.rodchenkoartschool.now.sh/" rel="noopener" target="_blank">
-                        <h5 class="name">Авдотья Александрова</h5>
-                        <p class="caption">Основательница Lumpen</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/4.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/4.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait4/" rel="noopener" target="_blank">
-                        <h5 class="name">Лариса Молоканова</h5>
-                        <p class="caption">VJ</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/5.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/5.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait5/" rel="noopener" target="_blank">
-                        <h5 class="name">Иван Морковкин</h5>
-                        <p class="caption">Фотограф</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/6.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/6.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait6/" rel="noopener" target="_blank">
-                        <h5 class="name">Анастасия Травкина</h5>
-                        <p class="caption">Редактор журнала «Нож»</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/7.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/7.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait7/" rel="noopener" target="_blank">
-                        <h5 class="name">Анастасия Пилепчук</h5>
-                        <p class="caption">Cоосновательница Areola Mag</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/8.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/8.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="https://media-portrait8-git-master.rodchenkoartschool.now.sh/" rel="noopener" target="_blank">
-                        <h5 class="name">Сергей Пацюк</h5>
-                        <p class="caption">Арт-директор The Blueprint</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/9.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/9.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait9/" rel="noopener" target="_blank">
-                        <h5 class="name">Юрий Чичков</h5>
-                        <p class="caption">Фотограф</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/10.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/10.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait10/" rel="noopener" target="_blank">
-                        <h5 class="name">Анна Айрапетова</h5>
-                        <p class="caption">Редактор Wonderzine</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/11.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/11.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait11/" rel="noopener" target="_blank">
-                        <h5 class="name">Полина Накрайникова</h5>
-                        <p class="caption">Шеф-редактор «Лайфхакер»</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/12.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/12.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait12/" rel="noopener" target="_blank">
-                        <h5 class="name">Серое Фиолетовое</h5>
-                        <p class="caption">Редактор журнала «Нож»</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/13.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/13.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait13/" rel="noopener" target="_blank">
-                        <h5 class="name">Эмми Америка</h5>
-                        <p class="caption">Фотограф</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/14.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/14.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="https://media-portrait14-git-master.rodchenkoartschool.now.sh/" rel="noopener" target="_blank">
-                        <h5 class="name">Анна Гусева</h5>
-                        <p class="caption">Cтилист</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/15.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/15.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait15/" rel="noopener" target="_blank">
-                        <h5 class="name">Иван Анненков</h5>
-                        <p class="caption">Арт-директор The Village</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/16.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/16.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait16/" rel="noopener" target="_blank">
-                        <h5 class="name">Ирина Фирсова</h5>
-                        <p class="caption">Стилист</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/17.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/17.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="https://www.instagram.com/sofeev/" rel="noopener" target="_blank">
-                        <h5 class="name">Андрей Носков</h5>
-                        <p class="caption">Фоторедактор</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/18.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/18.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait18/" rel="noopener" target="_blank">
-                        <h5 class="name">Фариза Родригез</h5>
-                        <p class="caption">Визажист</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/19.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/19.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="https://media-portrait19-git-master.rodchenkoartschool.now.sh/" rel="noopener" target="_blank">
-                        <h5 class="name">Алена Шевченко</h5>
-                        <p class="caption">Видеограф</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <picture>
-                    <source srcset="/img/20.webp" type="image/webp">
-                    <img class="grid__item-img" data-src="/img/20.jpg" loading="lazy" alt="">
-                </picture>
-                <figcaption class="grid__item-link">
-                    <a class="link" href="http://rodchenkoartschool.com/media-portrait20/" rel="noopener" target="_blank">
-                        <h5 class="name">Михаил Давыдов</h5>
-                        <p class="caption">Основатель платформы «Пилигрим»</p>
-                    </a>
-                </figcaption>
-            </figure>
-            <figure class="grid__item">
-                <h5 class="credits">
-                    Кураторы:<br>Екатерина Старостина,<br>Анна Кортюкова<br><br>Педагоги:<br>Юрий
-                    Чичков,<br>Игорь Самолет</h5>
-            </figure>
-            <footer class="grid__item">
-                <a class="link link--pr" href="http://mamm-edu.ru/courses/photoinmedia/" target="_blank" rel="noopener">
-                    <p>Photo in Media</p>
-                </a>
-                <a class="link link--ig" href="https://www.instagram.com/photo_in_media/" target="_blank" rel="noopener"></a>
-            </footer>
-        </main>
-        <canvas id="glcanvas" width="100vw" height="100vh"></canvas>
-    </div>
+	<div id="app" class="content">
+		<main class="content__grid hidden">
+			<header class="grid__item">
+				<h2 class="tagline">Этот проект объединяет<br>в себе 20 историй о людях, которые работают в медиа.
+				</h2>
+			</header>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/1.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/1.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait1/" rel="noopener" target="_blank">
+						<h5 class="name">Анастасия Безрукова</h5>
+						<p class="caption">Сет-дизайнер, художница</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/2.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/2.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="https://media-portrait2-git-master.rodchenkoartschool.now.sh/" rel="noopener"
+						target="_blank">
+						<h5 class="name">Евгения Зайцева</h5>
+						<p class="caption">Видеограф</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/3.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/3.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link"> <a class="link"
+						href="https://media-portrait3-git-master.rodchenkoartschool.now.sh/" rel="noopener" target="_blank">
+						<h5 class="name">Авдотья Александрова</h5>
+						<p class="caption">Основательница Lumpen</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/4.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/4.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait4/" rel="noopener" target="_blank">
+						<h5 class="name">Лариса Молоканова</h5>
+						<p class="caption">VJ</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/5.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/5.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait5/" rel="noopener" target="_blank">
+						<h5 class="name">Иван Морковкин</h5>
+						<p class="caption">Фотограф</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/6.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/6.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait6/" rel="noopener" target="_blank">
+						<h5 class="name">Анастасия Травкина</h5>
+						<p class="caption">Редактор журнала «Нож»</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/7.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/7.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait7/" rel="noopener" target="_blank">
+						<h5 class="name">Анастасия Пилепчук</h5>
+						<p class="caption">Cоосновательница Areola Mag</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/8.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/8.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="https://media-portrait8-git-master.rodchenkoartschool.now.sh/" rel="noopener"
+						target="_blank">
+						<h5 class="name">Сергей Пацюк</h5>
+						<p class="caption">Арт-директор The Blueprint</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/9.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/9.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait9/" rel="noopener" target="_blank">
+						<h5 class="name">Юрий Чичков</h5>
+						<p class="caption">Фотограф</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/10.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/10.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait10/" rel="noopener" target="_blank">
+						<h5 class="name">Анна Айрапетова</h5>
+						<p class="caption">Редактор Wonderzine</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/11.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/11.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait11/" rel="noopener" target="_blank">
+						<h5 class="name">Полина Накрайникова</h5>
+						<p class="caption">Шеф-редактор «Лайфхакер»</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/12.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/12.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait12/" rel="noopener" target="_blank">
+						<h5 class="name">Серое Фиолетовое</h5>
+						<p class="caption">Редактор журнала «Нож»</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/13.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/13.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait13/" rel="noopener" target="_blank">
+						<h5 class="name">Эмми Америка</h5>
+						<p class="caption">Фотограф</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/14.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/14.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="https://media-portrait14-git-master.rodchenkoartschool.now.sh/" rel="noopener"
+						target="_blank">
+						<h5 class="name">Анна Гусева</h5>
+						<p class="caption">Cтилист</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/15.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/15.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait15/" rel="noopener" target="_blank">
+						<h5 class="name">Иван Анненков</h5>
+						<p class="caption">Арт-директор The Village</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/16.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/16.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait16/" rel="noopener" target="_blank">
+						<h5 class="name">Ирина Фирсова</h5>
+						<p class="caption">Стилист</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/17.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/17.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="https://www.instagram.com/sofeev/" rel="noopener" target="_blank">
+						<h5 class="name">Андрей Носков</h5>
+						<p class="caption">Фоторедактор</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/18.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/18.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait18/" rel="noopener" target="_blank">
+						<h5 class="name">Фариза Родригез</h5>
+						<p class="caption">Визажист</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/19.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/19.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="https://media-portrait19-git-master.rodchenkoartschool.now.sh/" rel="noopener"
+						target="_blank">
+						<h5 class="name">Алена Шевченко</h5>
+						<p class="caption">Видеограф</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<picture>
+					<source srcset="/img/20.webp" type="image/webp">
+					<img class="grid__item-img" data-src="/img/20.jpg" loading="lazy" alt="">
+				</picture>
+				<figcaption class="grid__item-link">
+					<a class="link" href="http://rodchenkoartschool.com/media-portrait20/" rel="noopener" target="_blank">
+						<h5 class="name">Михаил Давыдов</h5>
+						<p class="caption">Основатель платформы «Пилигрим»</p>
+					</a>
+				</figcaption>
+			</figure>
+			<figure class="grid__item">
+				<h5 class="credits">
+					Кураторы:<br>Екатерина Старостина,<br>Анна Кортюкова<br><br>Педагоги:<br>Юрий
+					Чичков,<br>Игорь Самолет</h5>
+			</figure>
+			<footer class="grid__item">
+				<a class="link link--pr" href="http://mamm-edu.ru/courses/photoinmedia/" target="_blank" rel="noopener">
+					<p>Photo in Media</p>
+				</a>
+				<a class="link link--ig" href="https://www.instagram.com/photo_in_media/" target="_blank" rel="noopener"></a>
+			</footer>
+		</main>
+		<canvas id="glcanvas" width="100vw" height="100vh"></canvas>
+	</div>
 
-    <script>
-        window.lazyLoadOptions = {
-            elements_selector: "[loading=lazy]",
-            use_native: true
-        };
-    </script>
-    <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
+	<script>
+		window.lazyLoadOptions = {
+			elements_selector: "[loading=lazy]",
+			use_native: true
+		};
+	</script>
+	<script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@12.0.0/dist/lazyload.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
-    </script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+	</script>
 
-    <script type="text/javascript" src="js/libs.core.min.js"></script>
-    <script type="text/javascript" src="js/cables.min.js"></script>
+	<script type="text/javascript" src="js/libs.core.min.js"></script>
+	<script type="text/javascript" src="js/cables.min.js"></script>
 
-    <script type="text/javascript" src="js/ops.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/ops.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 </body>
 
 </html>
