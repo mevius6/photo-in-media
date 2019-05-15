@@ -45,7 +45,7 @@ if (supportsCssVars()) {
 			document.addEventListener("DOMContentLoaded", function(event) {
 				CABLES.patch = new CABLES.Patch({
 					patchFile: "js/app.json",
-					prefixAssetPath: "",
+					prefixAssetPath: "img",
 					glCanvasId: "glcanvas",
 					glCanvasResizeToWindow: true,
 					onError: showError,
