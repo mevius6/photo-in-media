@@ -156,8 +156,8 @@ body {
 
 .app__cta-btn {
 	position: absolute;
-	inset-inline-start: 50%;
-	inset-block-end: 0;
+	left: 50%;
+	bottom: 0;
 	padding: 1em 0 1em calc(var(--spacing) / 1.5);
 	letter-spacing: calc(var(--spacing) / 1.5);
 	text-transform: uppercase;
@@ -178,8 +178,8 @@ body {
 	transition-delay: var(--duration);
 }
 .app__cta-btn::before {
-	inset-block-start: 0;
-	inset-inline-start: 50%;
+	top: 0;
+	left: 50%;
 	width: 0;
 	height: 100%;
 	border-color: var(--color-hl);
@@ -187,19 +187,19 @@ body {
 	border-width: 1px 0;
 }
 .app__cta-btn::after {
-	inset-inline-start: 0;
+	left: 0;
 	width: 100%;
 	height: 0;
 	bottom: 0;
 	background: var(--color-hl);
 }
 .app__cta-btn:hover::before {
-	inset-inline-start: 0;
+	left: 0;
 	width: 100%;
 	transition-delay: 0s;
 }
 .app__cta-btn:hover::after {
-	inset-block-start: 0;
+	top: 0;
 	height: 100%;
 	background: var(--color-hl);
 	transition-delay: var(--duration);
@@ -305,10 +305,10 @@ body {
 .grid__item-link {
 	position: absolute;
 	z-index: 2;
-	inset-inline-start: 0;
+	left: 0;
 	width: 100%;
 	height: 90px;
-	inset-block-end: -90px;
+	bottom: -90px;
 }
 .grid__item-link > .link {
 	background-color: var(--color-hl);
@@ -319,7 +319,7 @@ body {
 	transform: translateY(-40px);
 }
 .grid__item:hover .grid__item-link {
-	inset-block-end: 0;
+	bottom: 0;
 }
 
 @media screen and (max-width: 414px) {
