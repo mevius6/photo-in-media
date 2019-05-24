@@ -44,7 +44,7 @@ if (supportsCssVars()) {
 
 			document.addEventListener("DOMContentLoaded", function(event) {
 				CABLES.patch = new CABLES.Patch({
-					patchFile: "js/app.json",
+					patch: CABLES.exportedPatch,
 					prefixAssetPath: "img",
 					glCanvasId: "glcanvas",
 					glCanvasResizeToWindow: true,
@@ -64,6 +64,6 @@ if (supportsCssVars()) {
 	}
 } else {
 	alert(
-		"Ваш браузер устарел, пожалуйста, используйте более современный браузер чтобы улучшить свои впечатления и безопасность!"
+		"Пожалуйста, используйте более современный браузер чтобы улучшить свои впечатления и безопасность!"
 	)
 }
