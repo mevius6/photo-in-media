@@ -1,1 +1,1 @@
-photoin.media
+photo-in-media
