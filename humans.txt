@@ -11,4 +11,4 @@
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5, JavaScript
-    jQuery, Cables.gl
+    jQuery, WebGL, Cables.gl
