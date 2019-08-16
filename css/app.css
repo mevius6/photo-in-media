@@ -71,26 +71,34 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.app__loader-wrap {
-	position: absolute;
-	z-index: 10000;
-	display: -ms-grid;
-	display: grid;
-	place-content: center;
+.loading::before {
+	content: "";
+	position: fixed;
+	z-index: 100000;
+	top: 0;
+	left: 0;
 	width: 100%;
-	min-height: 100vh;
+	height: 100%;
 	background: var(--color-bg);
 }
 
-.app__loader {
-	opacity: 1;
+.loading::after {
+	content: "";
+	position: fixed;
+	z-index: 100000;
+	top: 50%;
+	left: 50%;
 	width: 2rem;
 	height: 2rem;
-	margin: auto;
-	border-radius: 50%;
+	margin: -15px 0 0 -15px;
+	-webkit-pointer-events: none;
+	pointer-events: none;
 	background: var(--color-bd);
-	-webkit-animation: 1s loading ease-in infinite alternate forwards;
-	animation: 1s loading ease-in infinite alternate forwards;
+	border-radius: 50%;
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+	-webkit-animation: loading 1s ease-in infinite alternate forwards;
+	animation: loading 1s ease-in infinite alternate forwards;
 }
 
 @-webkit-keyframes loading {
